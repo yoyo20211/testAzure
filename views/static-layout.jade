@@ -1,0 +1,19 @@
+extends main-layout
+
+block header
+    //- we can use expressjs partials for dynamic content
+    //- !=partial('partials/header')
+    //- or use jade includes for simple html injection
+    include partials/header
+
+block content
+
+block footer
+    //- !=partial('partials/footer')
+    include partials/footer
+
+block extra
+//- TODO: get signin and signup links to show on static pages
+//-     input(type="hidden", id="loggedin", value="#{loggedin}")
+//-     input(type="hidden", id="token", value="#{token}")
+//- div#myEventWatcherDiv

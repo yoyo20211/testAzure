@@ -1,0 +1,332 @@
+//========================================//
+//=== authentication styles start here ===//
+//========================================//
+
+
+signup, signin {
+
+  nav.controls {
+    .column(1);
+
+    a {
+      .column(7);
+      padding: 5px 0;
+
+      img {
+        .column(12);
+      }
+    }
+  }// end nav
+
+  header {
+    .column(10);
+    height: auto;
+
+    h1 {
+      // .column(5);
+      // .push(3);
+      min-width: 120px;
+      padding: 15px 15px 5px 15px;
+      font-size: 18px;
+      font-family: "Georgia" serif;
+      font-style: italic;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: top;
+
+      span {
+        color: @brightBlue;
+        // font-size: 20px;
+        text-shadow: 1px 1px 3px @lightGrey;
+
+      }
+    }// end h1
+  }// end header
+}// end signup signin
+
+
+//=== sign up ===//
+signup {
+  .column(8);
+  .push(2);
+  min-width: 200px;
+  height: auto;
+  // min-height: 480px;
+  margin-top: 100px;
+  padding: 0 0 10px 0;
+  background: #FFF;
+  border: 3px solid #ccc;
+  .rounded-corners(10px);
+  .shadow(1px, 1px, 8px, 2px, @mediumGrey);
+
+// header moved to general.less form styles /
+  form {
+    .column(12);
+
+    fieldset{
+      padding: 10px 10px;
+
+      label {
+        padding: 0 0 0 2px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 95%;
+        height: 30px;
+        margin: 5px 0 0 0;
+        padding-left: 5px;
+        border: 3px solid #ccc;
+        .rounded-corners(5px);
+      }
+
+      .checkbox {
+        width: auto;
+        height: auto;
+      }
+    }// end fieldset
+
+    map {
+      .column(12);
+
+      img {
+        .column(12);
+      }
+    }
+
+    .actions {
+      .column(12);
+      margin-top: 20px;
+
+      input {
+        .column(4);
+        .push(4);
+        height: 60px;
+        font-size: 20px;
+        font-family: "Georgia" serif;
+        font-style: italic;
+        font-weight: bold;
+        background-color: @brightBlue;
+        border: 1px solid @brightBlue;
+        .rounded-corners(4px);
+        cursor: pointer;
+
+        &:hover {
+          background-color: #FFF;
+        }
+
+        &:active {
+          background-color: @brightBlue;
+          .shadow(-1px, -1px, 1px, 0px, #efefef);
+        }
+      }
+    }
+
+    em {
+      color: #8FD7FF;
+      text-decoration: none;
+      padding: 0 5px;
+    }
+
+    a {
+      color: @darkGrey;
+      text-decoration: none;
+
+      &:visited {
+        color: @darkGrey;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: @brightBlue;
+      }
+
+    }
+
+  }// end form
+
+  #signup-success {
+    .column(12);
+    margin-bottom: 10px;
+
+    h1 {
+      width: 100%;
+      text-align: center;
+
+      span {
+        color: @brightBlue;
+      }
+    }
+
+    p {
+      font-size: 13px;
+      text-align: center;
+      margin: 5px 10px;
+      line-height: 1.25;
+    }
+
+    img {
+      display: block;
+      clear: both;
+      margin: 5px auto 10px auto;
+    }
+
+    h5 {
+      margin: 5px 10px 10px 10px;
+      font-size: 11px;
+      font-weight: normal;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    h3{
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: "Georgia", serif;
+      text-align: center;
+      font-style: italic;
+    }
+  }// end #signup-success
+
+}// end signup
+
+signin {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 30px;
+  left: -250px;
+  z-index: 999;
+  padding: 0 10px 10px 0;
+  background: #FFF;
+  border: 3px solid #ccc;
+  .rounded-corners(10px);
+  .shadow(2px, 2px, 5px, 2px, #efefef);
+
+  header {
+    .column(10);
+
+    h1 {
+      .column(6);
+      padding: 5px 5px 5px 10px;
+      font-size: 15px;
+      font-family: "Georgia" serif;
+      font-style: italic;
+      font-weight: bold;
+    }// end h1
+
+    .close {
+      position: relative;
+      float: right;
+      width: 25px;
+      height: 25px;
+      margin: 0px 5px;
+      background-image: url("../images/close.png");
+    }
+  }// end header
+
+  form {
+  .column(12);
+
+    fieldset{
+      padding: 5px 10px;
+
+      label {
+        padding: 0 0 0 2px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        height: 30px;
+        margin: 5px 0 0 0;
+        padding-left: 5px;
+        border: 3px solid #ccc;
+        .rounded-corners(5px);
+      }
+
+      .checkbox {
+        width: auto;
+        height: auto;
+      }
+    }// end fieldset
+
+    .actions {
+      .column(12);
+      margin-top: 5px;
+
+      a {
+        color: @darkGrey;
+        text-decoration: none;
+        position: relative;
+        float: left;
+        font-size: 12px;
+        padding: 2px 10px;
+        clear: both;
+
+        &:visited {
+          color: @darkGrey;
+          text-decoration: none;
+        }
+
+        &:hover {
+          color: @brightBlue;
+        }
+      }// end a
+
+      input {
+        .column(4);
+        .push(8);
+        height: 30px;
+        font-size: 14px;
+        font-family: "Georgia" serif;
+        font-style: italic;
+        font-weight: bold;
+        background-color: @brightBlue;
+        border: 1px solid @brightBlue;
+        .rounded-corners(4px);
+        cursor: pointer;
+
+        &:hover {
+          background-color: #FFF;
+        }
+
+        &:active {
+          background-color: @brightBlue;
+          .shadow(-1px, -1px, 1px, 0px, #efefef);
+        }
+
+      }// end input
+    }// end actions
+  }// end form
+
+  #signin-form-error {
+    .column(12);
+    height: auto;
+
+    p {
+      .column(12);
+      font-size: 11px;
+      text-align: center;
+      margin: 5px 10px;
+      line-height: 1.25;
+      color: @salmon;
+    }
+  }
+
+  #signin-email-error,
+  #signin-password-error {
+    p {
+      .column(12);
+      font-size: 11px;
+      text-align: left;
+      margin: 5px 10px;
+      line-height: 1.25;
+      color: @salmon;
+    }
+  }
+
+}// end signin

@@ -1,0 +1,84 @@
+<html lang="en" id="index-page" class="no-js webkit root-section js  gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions fontface domloaded w-1900 lt-1920">
+<head>
+  <title>"MeListing Sign Up Form"</title>
+  
+</head>
+  <body>
+
+  <!-- this should be extacted as partial -->
+  <!-- csignup styles are already imported into the main.less -->
+
+    <signup>
+      <nav class="controls">
+          <a href="javascript:void(0)" id="signup-form-close" class="close" title="close the signup form."><img src="images/close.png"></a></a><!-- close popup form -->
+      </nav>
+      <header>
+        <h1>Create Your Account!</h1>
+      </header>
+      <div id="signup-form-error" class="error-form" style="display:none;"></div><!-- form errors -->
+      <form id="signup-form" class="ajax" method="post" action="javascript:void(0)">
+        <!-- left column fields -->
+        <left>
+          <fieldset>
+            <div class="clearfix">
+              <label for="signup-email" class="required">Email</label><div id="signup-email-error" class="error"></div>
+              <div class="input">
+                <input type="text" name="signup-email" id="signup-email" value="" placeholder="i.e. dalek@example.com" />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="clearfix">
+              <label for="signup-username" class="required">Username</label><div id="signup-username-error" class="error"></div>
+              <div class="input">
+                <input type="text" value="" name="signup-username" id="signup-username" placeholder="i.e. fahrenheit451" />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="clearfix">
+              <label for="signup-password" class="required">Password</label><div id="signup-password-error" class="error"></div>
+              <div class="input">
+                <input type="password" value="" name="signup-password" id="signup-password" placeholder="Don"t forget :)" />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="clearfix">
+              <div class="input">
+                <input type="checkbox" id="accept-terms-of-use" name="accept-terms-of-use"  value="" class="checkbox error-input">
+                <label id="terms-of-use" for="accept-terms-of-use" class="required">I accept the <a href="javascript:void(0)">terms of use.</a></label>
+                <div id="terms-of-use-error" class="error"></div>
+              </div>
+            </div>
+          </fieldset>
+        </left>
+        <!-- right column fields -->
+        <right>
+          <fieldset>
+              <div class="clearfix">
+                <label for="signup-location-country" class="clear required">Country or Zipcode</label><div id="signup-location-country-error" class="error"></div>
+                <div class="input">
+                  <input type="text" name="country" id="signup-location-country" placeholder="Type for suggestion. Country Name - i.e. United States"/>
+                </div>
+                <label for="signup-location-city-state" class="clear required">City and/or State</label><div id="signup-location-city-state-error" class="error"></div>
+                <div class="input">
+                  <input type="text" name="city" id="signup-location-city-state" placeholder="Type for suggestion.  City, State - i.e. New York, NY"/>
+                </div>
+                <div class="input">
+                  <label for="signup-location-neighborhood">Neighborhood</label>
+                  <input type="text" name="neighborhood" id="signup-location-neighborhood" placeholder="i.e. Upper East Side"/>
+                </div>
+              </div>
+          </fieldset>
+          <map>
+            <img src="images/map.svg">
+          </map>
+        </right>
+        <div class="actions">
+          <input type="submit" id="signup-submit-button" value="Sign Up!" class="btn" />
+        </div>
+      </form>
+    </signup>
+  </body>
+</html>

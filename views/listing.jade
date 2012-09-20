@@ -1,0 +1,141 @@
+!!! 5
+html(lang="en", lang="en", id="index-page", 
+  class="no-js webkit root-section js  gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions fontface domloaded w-1900 lt-1920")
+  head
+    title listsil Listing Detail
+  body
+    div(id="listing")
+        nav(class="controls")
+            a(href="javascript:void(0)", id="listing-detail-close",  class="close", title="close the listing detail page.")
+                img(src="/images/close.png")
+        div(id="tabs")
+            ul
+                li
+                    a(href="#item-detail") Item Detail
+                li
+                    a(href="#voice-video") Video/Voice
+                li
+                    a(href="#comments") Comments
+                li
+                    a(href="#email-lister") Email Lister
+            div(id="item-detail", class="item-detail")
+                p
+                    columns
+                        left
+                            listing-media
+                                img(src="images/sampleImage_001_120x90.jpg", class="large", alt="No Pic Available.", data-bind="attr: {src: mainImageDisplay}")
+                            section
+                                div(class="listing-carousel-wrapper")
+                                    div(class="listing-carousel")
+                                        ul
+                                            li(data-bind="if: numberOfPhotos() === 1")
+                                                a(href="javascript:void(0);")
+                                                    img(src="", class="small", alt="First Pic", data-bind="attr: {src: 'images/sampleImage_001_120x90.jpg'}")
+                                            li(data-bind="if: numberOfPhotos() === 2")
+                                                a(href="javascript:void(0);")
+                                                    img(src="images/sampleImage_001_120x90.jpg", class="small", alt="Second Pic")
+                                            li(data-bind="if: numberOfPhotos() === 3")
+                                                a(href="javascript:void(0);")
+                                                    img(src="images/sampleImage_001_120x90.jpg", class="small", alt="Third Pic)
+                                            li(data-bind="if: numberOfPhotos() === 4")
+                                                a(href="javascript:void(0);")
+                                                    img(src="images/sampleImage_001_120x90.jpg", class="small", alt="Fourth Pic")
+                            listing-attr
+                                header
+                                h1(class="listing-detail-title", data-bind="text: title")
+                            ul(class="attributes")
+                                li(class="attribute")
+                                    img(src="images/listingAttr_price.png")
+                                    attr(class="listing-detail-price", class="price", data-bind="text: price")
+                                li(class="attribute")
+                                    img(src="images/listingAttr_location.png")
+                                    attr(class="listing-detail-location", data-bind="text: address['city']")
+                                li(class="attribute")
+                                    img(src="images/listingAttr_userInfo.png")
+                                    a(href="javascript:void(0);", class="listing-detail-username-link")
+                                        attr(class="listing-detail-username", data-bind="text: username")
+                                li(class="attribute")
+                                    img(src="images/listingAttr_likes.png")
+                                    attr(class="listing-detail-user-rating", data-bind="text: userRating")
+                                li(class="attribute")
+                                    img(src="images/listingAttr_categories.png")
+                                    attr(class="listing-detail-category", data-bind="text: category")
+                                li(class="attribute")
+                                    img(src="images/listingAttr_deliveryOptions.png")
+                                    attr(class="listing-detail-exchange-options", data-bind="text: exchangeOptionsString")
+                                li(class="attribute")
+                                    img(src="images/listingAttr_sendMessage.png")
+                                    a(href="javascript:void(0);", class="listing-detail-email-link")
+                                        attr(class="listing-detail-email", data-bind="text: email")
+                    description
+                        header
+                            h2 Listing Description:
+                        p(class="listing-detail-description", class="wordwrap", data-bind="text: itemDescription")
+                    bottom &nbsp;
+            div(id="voice-video")
+                div(data-bind="if: video")
+                    p 
+                        object(width="425", height="350")
+                          param(name="movie", value="", data-bind="attr: {src: 'http://www.youtube.com/v/HvHOCqbA6rE'}")
+                          param(name="wmode", value="transparent")
+                          embed(src="", type="application/x-shockwave-flash", wmode="transparent", width="425", height="350", data-bind="attr: {src: 'http://www.youtube.com/v/HvHOCqbA6rE'}")
+                div(data-bind="ifnot: video")
+                    p
+                        h3 No Video Available
+                p &nbsp;
+                div(data-bind="if: voice")
+                    p
+                        audio(src="", preload="auto", data-bind="attr: {src: 'http://www.hubharp.com/web_sound/BachGavotte.mp3'}") //TODO change to voice attr.
+                div(data-bind="ifnot: voice")
+                    p
+                        h3 No Voice Recording Available
+            div(id="comments")
+                p
+                    div(id="disqus_thread", class="disqus-ajax")
+            div(id="email-lister")
+                p 
+                    | <form name="htmlform" method="post" action="javascript:void(0);" style="margin: auto;">
+                    |    <table width="100%">
+                    |        </tr>
+                    |        <tr>
+                    |         <td valign="top">
+                    |          <label for="lister">Lister</label>
+                    |         </td>
+                    |         <td valign="top">
+                    |          <input type="text" name="lister" maxlength="80%" size="60%" data-bind="value: email" disabled>
+                    |         </td>
+                    |        </tr>
+                    |        <tr>
+                    |         <td valign="top">
+                    |          <label for="subject">Subject: </label>
+                    |         </td>
+                    |         <td valign="top">
+                    |          <input  type="text" name="subject" maxlength="80%" size="60%" data-bind="value: title">
+                    |         </td>
+                    |        <tr>
+                    |        <tr>
+                    |         <td valign="top">
+                    |          <label for="your-email">Your Email *</label>
+                    |         </td>
+                    |         <td valign="top">
+                    |          <input  type="text" name="your-email" maxlength="80%" size="60%">
+                    |         </td>
+                    |        <tr>
+                    |         <td valign="top">
+                    |          <label for="message">Message *</label>
+                    |         </td>
+                    |         <td valign="top">
+                    |          <textarea  name="message" maxlength="1500" cols="60%" rows="6"></textarea>
+                    |         </td>         
+                    |        </tr>
+                    |        <br>
+                    |        <tr>
+                    |         <td colspan="2" style="text-align:center">
+                    |          <input type="submit" value="Submit"> 
+                    |         </td>
+                    |        </tr>
+                    |    </table>
+                    | </form>
+
+
+

@@ -1,0 +1,271 @@
+//=== global style resets ===//
+@import 'reset.less';
+//@import 'colorbox.css';
+//=== use semantic grid stystem ===//
+@import 'grid.less';
+@import 'grid-config.less';
+//=== base variables and shared styles ===//
+@import 'common.less';
+//===  import authentication styles ===//
+@import 'auth.less';
+//=== import listing styles ===//
+@import 'listing.less';
+
+//===================//
+//=== PRE CONTENT ===//
+//===================//
+top {.column(12);}
+bottom {.column(12);}
+
+//=====================//
+//=== LIST SELECTOR ===//
+//=====================//
+
+#list-selector {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  padding: 5px 5px 5px 2px;
+  background: @lightGrey;
+  border: 1px dotted @brightBlue;
+  border-left: none;
+  .rounded-corners-right(10px);
+}
+
+//==============//
+//=== BANNER ===//
+//==============//
+@import 'main-banner';
+
+//===============//
+//=== CONTENT ===//
+//===============//
+
+//=== MAIN CONTENT WRAPPER ===//
+#wrapper {
+  .column(12);
+  margin-top: 30px;
+  height: 100%;
+  min-height: 100%;
+  overflow: visible;
+
+  //=== MAIN CONTENT ===//
+  content {
+    // .column(12);
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+
+    //=== DATE FILTER RANGE SCROLLER ===//
+    days-filter {
+      .column(10);
+      .push(1);
+      height: auto;
+
+      form {
+        fieldset{
+
+        }
+      }
+
+      //=== JQUERYUI SLIDER STYLE OVERRIDES ===//
+      .ui-slider {}
+      .ui-slider-horizontal {
+        height: 3px;
+        background: black;
+      }
+      .ui-widget {}
+      .ui-widget-content {}
+      .ui-corner-all {}
+
+      #handle_days {}
+
+      .ui-widget-content {
+
+      }
+
+      .ui-slider-handle {
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: black;
+        .rounded-corners(6px);
+        border: 2px solid black;
+        cursor: pointer;
+
+        &:hover {
+          border: 2px solid @brightBlue;
+          background: @darkGrey;
+        }
+        &:active {
+          border: 2px solid @brightBlue;
+          background: @darkGrey;
+        }
+      }
+
+      .ui-state-default {}
+      .screenReaderContext {}
+
+      .ui-slider-tooltip {
+        width: 100px;
+        height: 15px;
+        // margin: 0 0 0 -10px;
+        top: -35px;
+        left: -8px;
+        bottom: 0px;
+        padding: 3px 2px 1px 2px;
+        border: 1px solid @darkGrey;
+        background: white;
+        font-size: 11px;
+        font-weight: normal;
+        color: @darkGrey;
+      }
+
+      .ui-tooltip-pointer-down, .ui-tooltip-pointer-up {
+        border-top-color: @darkGrey;
+        border-right-color: none;
+        border-bottom-color: none;
+        border-left-color: none;
+      }
+
+      .ttContent {
+        font-size: 12px;
+      }
+
+      .ui-tooltip-pointer-down-inner  {}
+      .ui-slider-scale {}
+      .ui-helper-reset {}
+
+      .ui-slider-label {
+        width: 100px;
+        top: -8px;
+        left: -2px;
+        font-size: 14px;
+        font-weight: normal;
+        font-family: "Helvetica" sans-serif;
+        color: @darkGrey;
+        text-align: center;
+      }
+      .ui-slider-label-show {}
+
+      .ui-slider-tic {
+        top: -25px;
+        bottom: 0;
+        left: -8px;
+        display: block;
+        width: 5px;
+        height: 5px;
+        // background: black;
+        .rounded-corners(4px);
+        border: 2px solid black;
+      }
+
+    }// end days-filter
+  }// end #content
+}// end #wrapper
+
+//=== FILTER MENU ===//
+@import 'filters';
+
+//=== SCROLLING IMAGE BROWSER ===//
+@import 'imagelist';
+
+//=== SIMPLE LIST BROWSER & DIRECTORY ===//
+@import 'textlist';
+
+//=== STATIC PAGES ===//
+@import 'static';
+
+//=== DIRECTORY PAGES ===//
+@import 'directory';
+
+//==============================//
+//=== DEVICE SPECIFIC STYLES ===//
+//==============================//
+
+@media (max-device-width: 1024px) {}
+@media (max-device-width: 960px) {}
+@media (max-device-width: 640px) {}
+
+//=====================//
+//=== FOOTER STYLES ===//
+//=====================//
+footer {
+  width: 99%;
+  position: absolute !important;
+  top: 0;
+  margin: 1%;
+
+  #footerlinks {
+    width: 100%;
+    text-align: center;
+    height: 35px;
+
+    #about {
+      // float: right;
+      padding: 0 10px 0 0;
+
+      .copyright {
+        display: inline;
+        text-decoration: none;
+        font-size: 12px;
+        color: #666;
+      }
+
+
+      li {
+        display: inline;
+        padding: 0 6px;
+        width: auto;
+        height: auto;
+        // padding: 0.2em 1em;
+
+        a {
+          text-decoration: none;
+          font-size: 12px;
+          color: #666;
+          background-size: cover;
+          &:visited {
+              text-decoration: none;
+              font-size: 12px;
+              color: #666;
+          }
+          &:hover {
+              color: @brightBlue;
+          }
+        }// end a
+
+        .tw, .fb{
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin: 0 0 0 5px;
+          vertical-align: middle;
+          border: 1px solid #FFF;
+
+          &:hover {
+            border: 1px solid @brightBlue;
+            .rounded-corners(12px);
+          }
+
+          &:active {
+            border: 1px solid @brightBlue;
+            background-color: @brightBlue;
+          }
+        }
+
+        .tw {
+          background: url(/images/icon_twitter.svg) no-repeat;
+          background-size: cover;
+        }
+
+        .fb {
+          background: url(/images/icon_facebook.svg) no-repeat;
+          background-size: cover;
+        }
+      }// end li
+    }// end ul#about
+  }// end footerLinks
+}// end footer

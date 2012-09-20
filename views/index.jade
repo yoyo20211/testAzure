@@ -1,0 +1,192 @@
+extends main-layout
+
+block css-extend
+    link(rel="stylesheet", href="/stylesheets/ui-lightness/jquery-ui-1.8.17.custom.css")
+    link(rel="stylesheet", href="/stylesheets/ui-lightness/ui.slider.extras.css")
+    link(rel="stylesheet", href="/stylesheets/kendo.common.min.css")
+    link(rel="stylesheet", href="/stylesheets/kendo.default.min.css")
+    link(rel="stylesheet", href="/stylesheets/kendo.default.min.css")
+    link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css")
+    | <!--[if lte IE 8]>
+    |     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
+    | <![endif]-->
+    link(rel="stylesheet", href="/stylesheets/MarkerCluster.css")
+    link(rel="stylesheet", href="/stylesheets/MarkerCluster.Default.css")
+    link(rel="stylesheet", href="/stylesheets/MarkerCluster.Default.ie.css")
+block scripts-extend
+    //We need to put this inline to fix loading sequence issue.
+    //If not, the content of isotope won't be centered.
+    script(type="text/javascript")
+        head.js("/js/jquery.colorbox-min.js", "http://cdn.leafletjs.com/leaflet-0.4/leaflet.js")
+        head.js("http://maps.stamen.com/js/tile.stamen.js", "/js/leaflet.markercluster.js")
+        head.js("https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js", "/js/selectToUISlider.jQuery.js", "/js/jquery.easing.1.3.js")
+        head.js("/js/jquery.mailcheck.min.js", "/js/jquery.isotope.min.js", "/js/jquery.isotope.centered.plugin.js")
+        head.js("/js/socket.io.js", "/js/session.min.js", "/js/jquery.elastislide.js", "/js/index.js")
+        head.js("/js/audio.min.js", "/js/kendo.web.min.js", "/js/knockout-2.1.0.js", "/js/knockout.mapping-latest.js")
+    //- moved to main-layout.jade
+    //- trying to get the authentication links to work across static pages
+    //- start header content
+    
+block display-selector
+            #list-selector
+                ul#lists
+                    li.list
+                        a(href="javascript:void(0);", id="media-listing-selector", title="Media Listings")
+                            img(src="/images/icon_photo.svg")
+                    li.list
+                        a(href="javascript:void(0);", id="text-listing-selector", title="Text Listings")
+                            img(src="/images/icon_list.svg")
+
+block header
+    include partials/header
+        block main-nav
+            nav(id="main-nav")
+                search-section
+                    ul
+                        li
+                            form
+                                input(id="search", type="text", name="field", class="textInput", placeholder="Find something")
+                        li
+                            a(href="javascript:void(0);", id="list-something", class="", title="Post a new listing")
+                                p List Something
+        block current-location-indicator
+            location-indicator 
+                b(class="rtop")
+                    b(class="r1") 
+                    b(class="r2") 
+                    b(class="r3") 
+                    b(class="r4")
+                ul
+                    li(id="location-indicator-city") 
+                    li(id="location-indicator-state-or-country")
+                    li(id="location-indicator-change-location") 
+                        a(href="javascript:void(0);") change location
+                b(class="rbottom")
+                    b(class="r4") 
+                    b(class="r3") 
+                    b(class="r2") 
+                    b(class="r1")
+//- main content
+block content    
+    div(id="wrapper")
+        menu
+            section
+                ul
+                    li
+                        a(href="javascript:void(0)", id="category-filter")
+                            img(src="/images/icon_categories.svg")
+                    li
+                        a(href="javascript:void(0)", id="location-filter")
+                            img(src="/images/icon_location.svg")
+                    li
+                        a(href="javascript:void(0)", id="wishlist-filter")
+                            img(src="/images/icon_likes.svg")
+                    li
+                        a(href="javascript:void(0)", id="help-filter")
+                            img(src="/images/icon_help.svg")
+                    li
+                        a(href="javascript:void(0)", id="mobile-app-filter")
+                            img(src="/images/icon_mobile.svg")
+        filters
+            categories(style="display:none;", id="category-filter-section")
+                ul
+                    each category, index in categories
+                        li
+                            input(type="checkbox", name="category", value="#{category}", class="checkbox category")
+                            p(class="category", id="#{category}") #{category}
+            location(style="display:none;", id="location-filter-section")
+                mylocation
+                    h2 Current location:
+                    ul(id="mylocation-address")
+                        li(id="mylocation-city-state")
+                            //- Insert current saved City, State
+                            p City, State
+                        li(id="mylocation-country")
+                            //- Insert current save Country
+                            p Country
+                distance
+                    h2 Within:
+                    ul(id="range")
+                        li
+                            input(type="radio", name="range", value="5", class="radio distance-range", checked)
+                            span 5 miles
+                        li
+                            input(type="radio", name="range", value="10", class="radio distance-range")
+                            span 10 miles
+                        li
+                            input(type="radio", name="range", value="50", class="radio distance-range")
+                            span 50 miles
+                        li
+                            input(type="radio", name="range", value="100", class="radio distance-range")
+                            span 100 miles
+                quicklocation
+                    h2 Quick Location Change:
+                    div(id="mylocation-change-error")
+                    label(for="location-country-change-text-input", class="clear required")  Country or Zipcode
+                    input(type="text", name="country", id="location-country-change-text-input", placeholder="Type for suggestion. Country Name - i.e. United States")
+                    label(for="location-city-state-change-text-input", class="clear required")  City and/or State
+                    input(type="text", name="city", id="location-city-state-change-text-input", placeholder="Type for suggestion.  City, State - i.e. New York, NY")
+                map
+                    div(id="map")
+            wishlist(style="display:none;", id="wishlist-filter-section")
+                div(id="es-carousel-wrapper-wishlist", class="es-carousel-wrapper")
+                    div(id="es-carousel", class="es-carousel")
+                      ul
+            help(id="help-filter-section", style="display:none;")
+            mobile(id="mobile-filter-section", style="display:none;")
+        content
+            days-filter
+                form(action="javascript:void(0)")
+                    fieldset
+                        label(for="days")
+                        select(name="days", id="days", style="display:none;")
+                            option(value="+1 week") + last 7 days
+                            option(value="+ last 3 days") + last 3 days
+                            option(value="Today", selected="selected") Today
+                            option(value="+ last 2 weeks") + last 2 weeks
+                            option(value="+1 month") + one month ago
+            div(id="media-listing-container")
+                div(id="playback-container")
+                    ul(id="playback-options")
+                        li(id="rewind")
+                            span
+                                a(href="javascript:void(0);", title="Rewind") Rewind
+                            span
+                                a(href="javascript:void(0);", title="Rewind") Rewind
+                        li(id="play", style="display: none;")
+                            a(href="javascript:void(0);", title="Play") Play
+                        li(id="pause") 
+                            a(href="javascript:void(0);", title="Pause") Pause
+                        li(id="forward")
+                            span
+                                a(href="javascript:void(0);", title="Forward") Forward
+                            span
+                                a(href="javascript:void(0);", title="Forward") Forward
+                div(id="scrolling-hotspot-left") &nbsp;
+                div(id="scrolling-hotspot-right") &nbsp;
+                div(id="image-listing-container")
+                    div(id="container")
+            div(id="text-listing-container", style="display:none;")
+                div(id="grid-listing-container")
+                    div(id="grid")
+                        script(type="text/x-kendo-template", id="grid-detail-template")
+                            div(id="grid-detail-media-strip")
+                                ul
+                                    li 
+                                        a(href="javascript:void(0);", class="grid-detail-media-photos") 
+                                            img(src="", alt="Media Photos")
+                                    li 
+                                        a(href="javascript:void(0);", class="grid-detail-media-video")
+                                            img(src="", alt="Media Video")
+                                    li 
+                                        a(href="javascript:void(0);", class="grid-detail-media-voice")
+                                            img(src="", alt="Media Voice")
+                                    li
+                                        a(href="javascript:void(0);", class="grid-detail-media-comments")
+                                            img(src="", alt="Media Comments")
+block extra
+    input(type="hidden", id="loggedin", value="#{loggedin}")
+    input(type="hidden", id="token", value="#{token}")
+    input(type="hidden", id="categories", value="#{categories}")
+div#myEventWatcherDiv
+

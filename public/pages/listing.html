@@ -1,0 +1,75 @@
+<html lang="en" id="index-page" class="no-js webkit root-section js  gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions fontface domloaded w-1900 lt-1920">
+<head>
+  <title>"MeListing Listing Form"</title>
+  
+</head>
+<body>
+<!-- this should be extacted as partial -->
+<!-- csignup styles are already imported into the main.less -->
+    <listing-detail>
+      <nav class="controls">
+        <a href="javascript:void(0)" id="listing-detail-close"  class="close" title="close the listing detail."><img src="images/close.png"></a><!-- close popup form -->
+      </nav>
+      <columns>
+        <!-- left column -->
+        <left>
+          <listing-media>
+            <img src="images/sampleImage.jpg" class="large" alt="Listing Title" title="Listing title | image name">
+            <section>
+              <img src="images/sampleImage.jpg" class="small" alt="Listing Title" title="Listing title | image name">
+              <img src="images/sampleImage.jpg" class="small" alt="Listing Title" title="Listing title | image name">
+              <img src="images/sampleImage.jpg" class="small" alt="Listing Title" title="Listing title | image name">
+            </section>
+          </listing-media>
+        </left>
+        <!-- Right column -->
+        <right>
+          <listing-attr>
+            <header>
+              <h1 id="listing-detail-title">Listing Title</h1><!-- insert listing title dynamically -->
+            </header>
+            <ul id="attributes">
+              <li class="attribute">
+                <img src="images/listingAttr_price.png">
+                <attr id="listing-detail-price" class="price">$24.00</attr>
+              </li>
+              <li class="attribute">
+                <img src="images/listingAttr_location.png">
+                <attr id="listing-detail-location">City, State Contry</attr>
+              </li>
+              <li class="attribute">
+                <img src="images/listingAttr_userInfo.png">
+                <attr id="listing-detail-username">joesmith01</attr>
+                <rating></rating>
+              </li>
+              <li class="attribute">
+                <img src="images/listingAttr_likes.png">
+                <attr id="listing-detail-wishlist-number">205</attr>
+              </li>
+              <li class="attribute">
+                <img src="images/listingAttr_categories.png">
+                <attr id="listing-detail-category">Tags, Tags, Tags, Tags</attr>
+              </li>
+              <li class="attribute">
+                <img src="images/listingAttr_deliveryOptions.png">
+                <attr id="listing-detail-exchange-options">Pickup, Delivery, Shipping</attr>
+              </li>
+              <li class="attribute">
+                <img src="images/listingAttr_sendMessage.png">
+                <attr id="listing-detail-email">Contact lister</attr>
+              </li>
+            </ul>
+          </listing-attr>
+        </right>
+      </columns>
+      <description>
+        <header><h2>Listing Description:</h2></header>
+        <p id="listing-detail-description">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </description>
+      <bottom>&nbsp;</bottom>
+    </listing-detail>
+</body>
+</html>
+
+
+

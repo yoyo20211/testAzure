@@ -1,0 +1,120 @@
+extends static-layout
+
+block css-extend
+
+block content
+    #directory.static-content
+        div(id="breadcrumb")
+            - link = "/pages/directory/"+listby+"/"+ alphabet +"/"+sort+"/"+page
+            a(href=link) directory
+
+        br
+        div(id="search")
+            div(id='aToz', align='center')
+                for character in AToZ
+                    if character == alphabet
+                        - var link = "/pages/directory/"+ listby +"/"+ character +"/"+ sort +"/1"
+                        a(href=link, style='margin-right:5px; font-weight: bold;') [ #{character.toUpperCase()} ]
+                    else
+                        - var link = "/pages/directory/"+ listby +"/"+ character +"/"+ sort +"/1"
+                        a(href=link, style='margin-right:5px;') #{character.toUpperCase()}
+
+
+        br
+          div(id="directory-wrapper", align='center')
+            table(style='width: 70%; border: 2px inset gray; ')
+                tr
+                    td(style='border: 2px inset gray; font-weight: bold;', align='center')
+                        if listby == "username"
+                            if sort == "desc"
+                                - var link = "/pages/directory/username/"+ alphabet +"/asc/"+page
+                                a(href=link, style='margin-right:10px; font-weight: bold;') Username &#9660;
+                            if sort == "asc"
+                                - var link = "/pages/directory/username/"+ alphabet +"/desc/"+page
+                                a(href=link, style='margin-right:10px; font-weight: bold;') Username &#9650;
+                        else
+                            - var link = "/pages/directory/username/"+ alphabet +"/asc/"+page
+                            a(href=link, style='margin-right:10px;') Username
+
+                    td(style='border: 2px inset gray; font-weight: bold;', align='center')
+                            if listby == "number"
+                                if sort == "desc"
+                                    - var link = "/pages/directory/number/"+ alphabet +"/asc/"+page
+                                    a(href=link, style='margin-right:10px; font-weight: bold;') Number Of Items &#9660;
+                                if sort == "asc"
+                                    - var link = "/pages/directory/number/"+ alphabet +"/desc/"+page
+                                    a(href=link, style='margin-right:10px; font-weight: bold;') Number Of Items &#9650;
+                              else
+                                    - var link = "/pages/directory/number/"+ alphabet +"/asc/"+page
+                                    a(href=link, style='margin-right:10px; font-weight: bold;') Number Of Items
+
+                    td(style='border: 2px inset gray; font-weight: bold;', align='center')
+                        if listby == "location"
+                            if sort == "desc"
+                                - var link = "/pages/directory/location/"+ alphabet +"/asc/"+page
+                                a(href=link, style='margin-right:10px; font-weight: bold;') Location &#9660;
+                            if sort == "asc"
+                                - var link = "/pages/directory/location/"+ alphabet +"/desc/"+page
+                                a(href=link, style='margin-right:10px; font-weight: bold;') Location &#9650;
+                        else
+                            - var link = "/pages/directory/location/"+ alphabet +"/asc/"+page
+                            a(href=link, style='margin-right:10px; font-weight: bold;') Location
+
+                for row in rows
+                    tr
+                        td(style='border: 2px inset gray;', align='center')
+                            - var link = "/pages/postinglist/"+ row.username+"/title/asc/1"
+                            a(href=link, style='margin-right:10px;') #{row.username}
+                        td(style='border: 2px inset gray;', align='center')
+                            - var link = "/pages/postinglist/"+ row.username+"/title/asc/1"
+                            a(href=link, style='margin-right:10px;') #{row.numOfItem}
+                        td(style='border: 2px inset gray;', align='center') #{row.location}
+
+                tr
+                    td
+                    td
+                    td
+                        div(style="float:right;clear:right; margin:5px;")
+                            - paginationShowNumber = parseInt(paginationShowNumber)
+                            - var showFrom    = 0
+                            - var showTo      = 0
+                            - var hasPreviousPages      = true
+                            - var hasNextPages          = true
+
+                        if numberOfPages <= paginationShowNumber
+                            - showFrom = 1
+                            - showTo = numberOfPages
+                            - hasPreviousPages        = false
+                            - hasNextPages            = false
+                        else
+                            if parseInt(pagesk) <= Math.ceil(paginationShowNumber/2)
+                                - showFrom = 1
+                                - showTo = paginationShowNumber
+                                - hasPreviousPages  = false
+                            else if (parseInt(page) >= (numberOfPages-Math.ceil(paginationShowNumber/2)))
+                                - showFrom = numberOfPages-paginationShowNumber+1
+                                - showTo = numberOfPages
+                                - hasNextPages  = false
+                            else
+                                - showFrom = page-Math.floor(paginationShowNumber/2)
+                                - showTo = parseInt(page)+Math.ceil(paginationShowNumber/2)-1
+                        if page > 1
+                            - var link = "/pages/directory/"+listby+"/"+ alphabet +"/"+sort+"/"+(page-1)
+                            a(href=link, style='margin-right:5px;') Prev
+                            if hasPreviousPages
+                                ...
+                            - for(var i=showFrom; i<=showTo; i++)
+                                if i == page
+                                    - var link = "/pages/directory/"+listby+"/"+ alphabet +"/"+sort+"/"+i
+                                    [
+                                    a(href=link, style='margin-right:5px;') #{i}
+                                    ]
+                                else
+                                    - var link = "/pages/directory/"+listby+"/"+ alphabet +"/"+sort+"/"+i
+                                    a(href=link, style='margin-right:5px;') #{i}
+                            if page < numberOfPages
+                                - var nextpage = parseInt(page)+1
+                                - var link = "/pages/directory/"+listby+"/"+ alphabet +"/"+sort+"/"+nextpage
+                            if hasNextPages
+                                ...
+                            a(href=link, style='margin-right:5px;') Next

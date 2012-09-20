@@ -1,0 +1,81 @@
+{"level":"info","message":" (Posting module) Add process id 2348029086 to Posting system"}
+{"level":"info","message":" (Posting module) add checking process id 2348029086 to the posting system"}
+{"level":"info","message":" (Posting module) posting id 2348029086 is success! and start uploading files"}
+{"level":"info","message":" (Posting module) save form process id 2348029086 to database"}
+{"level":"info","message":" (Posting module) posting process id 2348029086 is published"}
+{"level":"info","message":" (Posting module) Add process id 1242055340 to Posting system"}
+{"level":"info","message":" (Posting module) add checking process id 1242055340 to the posting system"}
+{"level":"info","message":" (Posting module) posting id 1242055340 is success! and start uploading files"}
+{"level":"info","message":" (Posting module) a temporary voice of process id 1242055340 is public\\data\\1fabf5c279e685b2c683ab12750996c5"}
+{"level":"info","message":" (Posting module) a temporary video of process id 1242055340 is public\\data\\343d3660e57a8dff3535e77ed211f7e3"}
+{"level":"info","message":" (Posting module) a temporary photo of process id photo_0_1242055340 is public\\data\\86f85e7c56a5b1f5d2dc1ed839907b50"}
+{"level":"info","message":" (Posting module) a temporary photo of process id photo_1_1242055340 is public\\data\\f635e15535f41508655e69f08a2485c1"}
+{"level":"info","message":" (Posting module) save form process id 1242055340 to database"}
+{"level":"info","message":" (Posting module) start insert posting data id 1242055340 to database"}
+{"level":"info","message":" (Posting module) add voice process id 1242055340 to the voice uploading system"}
+{"level":"info","message":" (Posting module) add video process id 1242055340 to the video uploading system"}
+{"level":"info","message":" (Posting module) save a posting data id 1242055340 to database successfully"}
+{"level":"info","message":" (Posting module) sent message id field_1242055340 to the checking system"}
+{"level":"info","message":" (Posting module) add photo process id photo_0_1242055340 to the photo uploading system"}
+{"level":"info","message":" (Posting module) add photo process id photo_1_1242055340 to the photo uploading system"}
+{"level":"info","message":" (Posting module) sent message id voice_1242055340 to the checking system"}
+{"level":"info","message":" (Posting module) authentication to youtube process id 1242055340 is success"}
+{"level":"info","message":" (Posting module) sent message id photo_0_1242055340 to the checking system"}
+{"level":"info","message":" (Posting module) sent message id photo_1_1242055340 to the checking system"}
+{"level":"info","message":" (Posting module) sent message id video_1242055340 to the checking system"}
+{"level":"info","message":" (Posting module) photo0 process id 1242055340 is success"}
+{"level":"info","message":" (Posting module) photo1 process id 1242055340 is success"}
+{"level":"info","message":" (Posting module) video process id 1242055340 is success"}
+{"level":"info","message":" (Posting module) voice process id 1242055340 is success"}
+{"level":"info","message":" (Posting module) posting process id 1242055340 is published"}
+{"level":"info","message":" (Posting module) Add process id 1113119890 to Posting system"}
+{"level":"info","message":" (Posting module) start insert posting data id 1113119890 to database"}
+{"level":"error","message":" (Posting module) cannot save a posting data id 1113119890 to database : \n ValidationError: Validator \"required\" failed for path address.country"}
+{"level":"info","message":" (Posting module) add voice process id 1113119890 to the voice uploading system"}
+{"level":"info","message":" (Posting module) sent message id field_1113119890 to the checking system"}
+{"level":"info","message":" (Posting module) add video process id 1113119890 to the video uploading system"}
+{"level":"info","message":" (Posting module) add photo process id photo_0_1113119890 to the photo uploading system"}
+{"level":"info","message":" (Posting module) sent message id voice_1113119890 to the checking system"}
+{"level":"info","message":" (Posting module) add photo process id photo_1_1113119890 to the photo uploading system"}
+{"level":"info","message":" (Posting module) add photo process id photo_2_1113119890 to the photo uploading system"}
+{"level":"info","message":" (Posting module) authentication to youtube process id 1113119890 is success"}
+{"level":"info","message":" (Posting module) sent message id photo_0_1113119890 to the checking system"}
+{"level":"info","message":" (Posting module) sent message id photo_1_1113119890 to the checking system"}
+{"level":"info","message":" (Posting module) sent message id photo_2_1113119890 to the checking system"}
+{"level":"info","message":" (Posting module) sent message id video_1113119890 to the checking system"}
+{"level":"error","message":" (Posting module) photo0 process id 1113119890 error : \nnull"}
+{"level":"error","message":" (Posting module) photo1 process id 1113119890 error : \nnull"}
+{"level":"error","message":" (Posting module) photo2 process id 1113119890 error : \nnull"}
+{"level":"error","message":" (Posting module) video process id 1113119890 error : \nnull"}
+{"level":"error","message":" (Posting module) voice process id 1113119890 error : \nnull"}
+{"level":"info","message":" (Posting module) posting process id 1113119890 can not to be published because there is some error :"}
+{"level":"info","message":" (Posting module) Add process id 2625690327 to Posting system"}
+{"level":"info","message":" (Posting module) add checking process id 2625690327 to the posting system"}
+{"level":"info","message":" (Posting module) posting id 2625690327 is success! and start uploading files"}
+{"level":"info","message":" (Posting module) a temporary voice of process id 2625690327 is public\\data\\4722b0ae83c62011c780fbfb6b62332a"}
+{"level":"info","message":" (Posting module) a temporary video of process id 2625690327 is public\\data\\0adb29a531c1a687f26d4c991c92f98d"}
+{"level":"info","message":" (Posting module) a temporary photo of process id photo_0_2625690327 is public\\data\\82e7ba42280c18c9be66d10641445550"}
+{"level":"info","message":" (Posting module) a temporary photo of process id photo_1_2625690327 is public\\data\\f31de620b30bf46f0777ef5f8680a028"}
+{"level":"info","message":" (Posting module) a temporary photo of process id photo_2_2625690327 is public\\data\\bac3e6d9d7a8728a956c7cd69a3f05cc"}
+{"level":"info","message":" (Posting module) save form process id 2625690327 to database"}
+{"level":"info","message":" (Posting module) start insert posting data id 2625690327 to database"}
+{"level":"info","message":" (Posting module) add voice process id 2625690327 to the voice uploading system"}
+{"level":"info","message":" (Posting module) add video process id 2625690327 to the video uploading system"}
+{"level":"info","message":" (Posting module) add photo process id photo_0_2625690327 to the photo uploading system"}
+{"level":"info","message":" (Posting module) save a posting data id 2625690327 to database successfully"}
+{"level":"info","message":" (Posting module) sent message id field_2625690327 to the checking system"}
+{"level":"info","message":" (Posting module) add photo process id photo_1_2625690327 to the photo uploading system"}
+{"level":"info","message":" (Posting module) sent message id voice_2625690327 to the checking system"}
+{"level":"info","message":" (Posting module) add photo process id photo_2_2625690327 to the photo uploading system"}
+{"level":"info","message":" (Posting module) authentication to youtube process id 2625690327 is success"}
+{"level":"info","message":" (Posting module) sent message id photo_0_2625690327 to the checking system"}
+{"level":"info","message":" (Posting module) sent message id photo_1_2625690327 to the checking system"}
+{"level":"info","message":" (Posting module) sent message id photo_2_2625690327 to the checking system"}
+{"level":"info","message":" (Posting module) sent message id video_2625690327 to the checking system"}
+{"level":"info","message":" (Posting module) photo0 process id 2625690327 is success"}
+{"level":"info","message":" (Posting module) photo1 process id 2625690327 is success"}
+{"level":"info","message":" (Posting module) photo2 process id 2625690327 is success"}
+{"level":"info","message":" (Posting module) video process id 2625690327 is success"}
+{"level":"info","message":" (Posting module) voice process id 2625690327 is success"}
+{"level":"info","message":" (Posting module) posting process id 2625690327 is published"}
+{"level":"info","message":" (Posting module) sent message id photo_2_1113119890 to the checking system"}

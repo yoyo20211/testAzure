@@ -1,0 +1,310 @@
+//============================================//
+//=== PLAY, PAUSE, REWIND, FORWARD BUTTONS ===//
+//============================================//
+
+#playback-container {
+  width: 231px;
+  margin: auto;
+
+  a {
+    color:#FFF;
+  }
+}
+
+#playback-options li {
+  float:left;
+  -moz-border-radius:20px 20px 20px 20px;
+  background:none repeat scroll 0 0 transparent;
+  border:2px none #CCCCCC;
+  height:20px;
+  margin:17px;
+  text-align:center;
+  width:20px;
+
+  :hover {
+    cursor:pointer;
+  }
+}
+
+
+#rewind {
+  padding:10px 16px 7px 0;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  a {
+    border-color:transparent #CCCCCC transparent transparent;
+    border-style:solid;
+    border-width:8px 12px 8px 0;
+    float:left;
+    height:0;
+    margin:0 1.5em 0 0.4em;
+    text-indent:-9999px;
+    width:0;
+  }
+  ////
+  // We have to sort to asymmetry in .active and :ative here with play
+  // because we need to dynamically add class to rewind and forward
+  // with jQuery to highlight when clicked.
+  ////
+  a.active {
+    border-color: transparent black;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+  }
+} 
+
+#play {
+  padding:11px 7px 7px 9px; 
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  a {
+    border-color:transparent #CCCCCC transparent #CCCCCC;
+    border-style:solid;
+    border-width:8px 0 8px 12px;
+    float:left;
+    height:0;
+    margin:0 1.5em 0 0.4em;
+    text-indent:-9999px;
+    width:0;
+  }
+
+  a:active {
+    border-color: transparent black;
+    //background:none repeat scroll 0 0 black;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+  }
+}
+
+#pause {
+  padding:11px 6px 7px 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  a {
+    border-color:transparent #CCCCCC transparent #CCCCCC;
+    border-style:solid;
+    border-width:0px 4px 0 4px;
+    float:left;
+    height:15px;
+    text-indent:-9999px;
+    width:7px;
+  }
+
+  a:active {
+    //background:none repeat scroll 0 0 black;
+    border-color: transparent black;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+  }
+}
+
+#forward {
+  padding:10px 13px 7px 3px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  a {
+    border-color:transparent #CCCCCC transparent #CCCCCC;
+    border-style:solid;
+    border-width:8px 0 8px 12px;
+    float:left;
+    height:0;
+    margin:0 1.5em 0 0.4em;
+    text-indent:-9999px;
+    width:0;
+  }
+
+  a.active {
+    border-color: transparent black;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+  }
+}
+
+#forward span, #rewind span {
+  width:10px;
+  float:left;
+}
+
+//======================================//
+//=== IMAGE LIST BROWSER & DIRECTORY ===//
+//======================================//
+
+//=== IMAGE BROWSER ===//
+@imageBrowserHeight: 100%;
+
+#media-listing-container {
+  .column(11);
+  height: @imageBrowserHeight;
+  min-height: @imageBrowserHeight;
+  margin: 3% 0 0 0.3%;
+  overflow: visible;
+  width: 100%;
+
+  #scrolling-hotspot-left, #scrolling-hotspot-right {
+      position: absolute;
+      width: 3%;
+      height: @imageBrowserHeight;
+      min-height: @imageBrowserHeight;
+      opacity: 0.35;
+     -moz-opacity: 0.35;
+      cursor: url(/images/cursors/cursor_arrow_left.cur), url(/images/cursors/cursor_arrow_left.cur),w-resize;
+      z-index: 10;
+      clear: none;
+  }
+
+  #scrolling-hotspot-left {
+    left: 0;
+    cursor: url(/images/cursors/cursor_arrow_left.cur), url(/images/cursors/cursor_arrow_left.cur),e-resize;
+  }
+
+  #scrolling-hotspot-right {
+    right: 0;
+    cursor: url(/images/cursors/cursor_arrow_right.cur), url(/images/cursors/cursor_arrow_right.cur),e-resize;
+  }
+
+  .scrolling-hotspot-left-visible, .scrolling-hotspot-right-visible  {
+    background-image: url(/images/arrow_left.gif);
+    // background-color: red;
+    background-repeat: no-repeat;
+    opacity: 0.35;
+    -moz-opacity: 0.35;
+    zoom: 1;
+  }
+
+  .scrolling-hotspot-right-visible {
+    background-image: url(/images/arrow_right.gif);
+  }
+
+  #image-listing-container {
+    width: 100%;
+    // .column(12);
+    position: : absolute;
+    height: @imageBrowserHeight;
+    min-height: @imageBrowserHeight;
+
+    //==  Isotope css ==//
+
+    #container {
+      padding: 1%;
+      margin: 5% auto;
+      overflow: visible !important;
+
+      //==  Image styling ==//
+
+      .item {
+        float: left;
+        margin: 0 40px 0 0;
+        margin-bottom: 0.5em;
+
+        p.desc {
+          bottom: 0;
+          text-align: center;
+          position: absolute;
+          margin-bottom: 2%;
+          width: 100%;
+        }
+
+        & img {
+          position: absolute;
+          display: block;
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+
+      .twoxthree {
+        margin: 15px;
+        width: 145px !important;
+        height: 150px;
+      }
+
+      .fourxfive {
+        margin: 15px;
+        width: 250px;
+        height: 250px;
+      }
+
+      .fivexeight {
+        margin: 20px;
+        width: 380px;
+        height: 350px;
+      }
+
+      .sevenxnine {
+        margin: 20px;
+        width: 480px;
+        height: 450px;
+      }
+
+    }
+  }// end #image-listing-container
+} // end #media-listing-container
+
+//=== Isotope Filtering ===//
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+//=== Isotope CSS3 transitions ===//
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
+
+//=== disabling Isotope CSS3 transitions ===//
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+
+//A hack to make iframe created by easyXDM not pushing the view
+//creating extra space at the bottom
+iframe {
+  position: relative !important;
+}

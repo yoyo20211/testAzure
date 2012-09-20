@@ -1,0 +1,208 @@
+//==============//
+//=== BANNER ===//
+//==============//
+banner {
+  .column(12);
+  margin-top: 3%;
+
+  nav#account {
+    .column(2);
+    height: 25px;
+    float: right;
+    z-index: 999;
+    zoom:1;
+    .link {}
+
+    ul {
+      width: auto;
+      height: 25px;
+      list-style: none;
+
+      li {
+        .column(1);
+        width: auto;
+        position: relative;
+        float: right;
+        margin: 0 5px;
+        padding: 5px 5px 7px 5px;
+        font-size: 12px;
+
+        &#username {
+          // margin-top: 1px;
+
+        }
+
+        &#username, a {
+          padding: 5px 5px 7px 5px;
+          font-family: "Georgia" serif;
+          font-size: 12px;
+          font-style: italic;
+          text-decoration: none;
+          color: #000;
+          vertical-align: middle;
+        }
+
+        a {
+
+          &:visited {
+            color: #000;
+          }
+          &:hover {
+            color: @brightBlue;
+          }
+          &:active {
+          color: @brightBlue * 0.25;
+          }
+        }// end a
+      }// end li
+
+      #signup {
+        display:block;
+        width: 100%;
+        background-color: @lightGrey;
+        border: 1px solid @lightGrey;
+        .rounded-corners(2px);
+        text-align: center;
+
+        &:hover {
+          border: 1px solid @brightBlue;
+          background-color: #fff;
+        }
+
+        &:active {
+        background-color: @brightBlue;
+        color: #FFF;
+        }
+      }// end #signup
+    }// end ul
+  }// end nav#account
+
+  header {
+    .column(6);
+    .push(3);
+    min-width: 320px;
+    height: auto;
+    margin-top: 10px;
+
+    logo {
+      width: 260px;
+      min-height: 45px;
+      margin: 0 auto;
+      display: block;
+      // background: url(../images/logo_main.svg) no-repeat;
+
+      a {
+          display: block;
+          width: 100%;
+          height: 45px;
+      }
+    }
+
+    h1 {
+      width: 320px;
+      margin: 5px auto;
+      display: block;
+      font-size: 16px;
+      color: @darkGrey;
+      text-align: center;
+      clear: both;
+    }
+  }// end header
+
+  //=====================//
+  //=== SEARCH & LIST ===//
+  //=====================//
+  nav#main-nav {
+    .column(6);
+    .push(3);
+    min-width: 320px;
+    clear: both;
+    margin-top: 20px;
+
+    input, #list-something {
+        .column(6);
+        min-width: 10%;
+        max-height: 35px;
+        font-size: 12px;
+    }
+
+    input {
+      height: 33px;
+      text-align: center;
+      font-size: 15px;
+      color: #000;
+      margin: 0;
+      border: 1px solid #000;
+      .rounded-corners;
+    }
+
+    #list-something {
+      display: block;
+      height: 35px;
+      margin-left: 3%;
+      margin-right:0;
+      font-size: 15px;
+      color: #FFF;
+      text-decoration: none;
+      background-color: #000;
+      border: 1px solid #000;
+      .rounded-corners;
+      &:visited {
+          color: #FFF;
+      }
+      &:hover {
+          border: 1px solid #000;
+          background-color: #FFF;
+          color:@mediumGrey;
+      }
+
+      p {
+          width: 100%;
+          height: auto;
+          padding: 8px 0;
+          text-align: center;
+      }
+    }
+  }// end nav#main-nav
+
+  //==================================//
+  //=== CURRENT LOCATION INDICATOR ===//
+  //==================================//
+  location-indicator {
+    float: left;
+    margin-top: 1%;
+    margin-left: 12%;
+    background:#ccc; 
+    color:#fff; 
+
+    ul {
+      margin: 1%;
+      li {
+        margin: 5%;
+      }
+    }
+    .rtop, .rbottom{
+      display:block;
+      background:#fff;
+    }
+    .rtop *, .rbottom *{
+      display: block;
+      height: 1px;
+      overflow: hidden;
+      background:#ccc;
+    }
+   .r1{margin: 0 5px}
+   .r2{margin: 0 3px}
+   .r3{margin: 0 2px}
+   .r4{
+      margin: 0 1px;
+      height: 2px
+    }
+
+    #location-indicator-change-location a {
+      color:#fff;
+      font-size:80%;
+    }
+  }// end location-indicator
+
+}// end banner

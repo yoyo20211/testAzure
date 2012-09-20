@@ -1,0 +1,24 @@
+extends static-layout
+
+block content
+    #contact.static-content
+        :markdown
+            # Contact
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        form(action="contact_submit", method="", accept-charset="utf-8")
+            fieldset
+                label(for="name")
+                input(type="text", name="name", value="", placeholder="please enter your name.")
+                label(for="email")
+                input(type="text", name="email", value="", placeholder="please enter your email.")
+                label(for="message")
+                textarea(name="message")
+            .actions
+                input(type="submit", name="contact_submit", value="Contact")

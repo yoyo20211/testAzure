@@ -1,0 +1,13 @@
+Hello, 
+
+  There was a request to reset your account, {{username}}, at MeListing. To reset your account, just follow this link:
+
+  {{link}}
+
+  If it is not clickable, just copy and paste it in to your browser.  Once that is done, your account will be reset and you 
+  will be able to login with your new crendential.  Please contact us at admin@melisting.com if you ever need further assistance.
+
+  Please enjoy listing!
+
+
+  MeListing team.

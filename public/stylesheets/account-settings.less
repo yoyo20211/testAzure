@@ -1,0 +1,73 @@
+//=== global style resets ===//
+@import 'reset.less';
+//=== use semantic grid stystem ===//
+@import 'grid.less';
+@import 'grid-config.less';
+//=== base variables and shared styles ===//
+@import 'common.less';
+
+account-settings-menu {
+	.column(2);
+	height: 100%;
+	min-height: 100%;
+
+	.account-settings-menu {
+		margin: 10%;
+	}
+}
+
+main-content {
+	.column(9);
+	height: 80%;
+	min-height: 100%;
+
+	#account-settings-main-content-profile-detail-tabs, 
+	#account-settings-main-content-postitems-detail-tabs {
+	    background: transparent;
+	    border: none;
+
+	    .ui-widget-header {
+	      background: transparent;
+	      border: none;
+	      border-bottom: 1px solid #c0c0c0;
+	      -moz-border-radius: 0px;
+	      -webkit-border-radius: 0px;
+	      border-radius: 0px;
+	    }
+	    .ui-tabs-nav {
+	      border: none;
+	    }
+	    .ui-state-default {
+	      background: transparent;
+	      border: none;
+	    }
+	    .ui-state-active {
+	      background: transparent url(/images/uitabs-arrow.png) no-repeat bottom center;
+	      border: none;
+	    }
+	    .ui-state-default a {
+	      color: #c0c0c0;
+	    }
+	    .ui-state-active a {
+	      color: #459E00;
+	    }
+	}
+
+	.k-grid-content {
+	    overflow-x: auto;
+	    overflow-y: scroll;
+	    position: relative;
+	    width: 100%;
+	    height: 90%;
+	    min-height: 380px;
+	}
+
+	#profile-info-map { height: 180px; }
+}
+
+//=== Admin Postitem detail edit Kendo UI window ===//
+.k-window-titlebar .k-window-actions {
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+}

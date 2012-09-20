@@ -1,0 +1,129 @@
+<html lang="en" id="index-page" class="no-js webkit root-section js  gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions fontface domloaded w-1900 lt-1920">
+<head>
+  <title>"MeListing Listing Form"</title>
+  
+</head>
+<body>
+<!-- this should be extacted as partial -->
+<!-- csignup styles are already imported into the main.less -->
+  <new-listing>
+    <nav class="controls">
+      <a href="javascript:void(0)" id="listing-form-close"  class="close" title="close the signup form."><img src="images/close.png"></a><!-- close popup form -->
+    </nav>
+    <header>
+      <h1>List Item</h1>
+    </header>
+    <div id="uploadbar" style="display:none;"></div>
+    <div id="listing-form-error" class="error-form" style="display:none;"></div>
+    <div id="listing-form-cancel-upload" style="display:none;">
+      Closing the form will cancel the upload if there is one in progress. Do you want to?
+      <input type="button" id="listing-form-cancel-upload" value="Cancel Upload" class="btn" />
+      <input type="button" id="listing-form-continue-upload" value="Continue Upload" class="btn" />
+    </div>
+    <form class="ajax" id="listing-form" enctype="multipart/form-data" method="post" action="javascript:void(0);">
+      <!-- left column fields -->
+      <left>
+        <fieldset>
+          <div class="clearfix">
+            <label for="listing-title" class="required">Title</label><div id="listing-title-error" class="error"></div>
+            <div class="input">
+              <input type="text" name="title" id="listing-title" placeholder="Descriptive and to the point."/>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="clearfix">
+            <label for="listing-description" class="required">Description</label><div id="listing-description-error" class="error"></div>
+            <div class="input">
+              <textarea name="itemDescription" id="listing-description" placeholder=""></textarea>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="clearfix">
+            <label for="listing-email" class="required">Email</label><div id="listing-email-error" class="error"></div>
+            <input type="text" name="email" id="listing-email" placeholder="i.e. email@domain.com"/>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="clearfix">
+            <div class="input">
+              <label for="listing-show-email" class="clear">Show Email</label>
+              <ul>
+                <li><input type="radio" name="showEmail" value="1" class="checkbox"><label class="minor">Yes</label></li>
+                <li><input type="radio" name="showEmail" value="0" class="checkbox" checked><label class="minor">No</label></li>
+              </ul>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="clearfix">
+            <label for="media">Media</label><div id="listing-media-error"></div><br />
+            <span><a href="javascript:void(0)" id="listing-add-photos">Add Photos <span>( max. 4 ) +</a></span>
+            <div id="listing-photo-upload">
+              <div class="listing-photo-element">
+              <input type="file" class="media-input listing-photo" name="photoFile0"><span class="clear-mark">X</span>
+              </div>    
+            </div>
+            <span>Add Video (10 mbs max.)</span>
+            <input type="file" class="media-input listing-video" name="videoFile"><span class="clear-mark">X</span>
+            <span>Add Voice Recording (10 mbs max)</span>
+            <input type="file" class="media-input listing-voice" class="media-input" name="voiceFile"><span class="clear-mark">X</span>
+          </div>
+        </fieldset>
+      </left><!-- end left column -->
+      <!-- right column fields -->
+      <right>
+        <fieldset>
+          <div class="clearfix">
+            <label for="listing-price">Price* $</label><div id="listing-price-error" class="error"></div>
+            <div class="input">
+              <input type="text" name="price" id="listing-price" placeholder="i.e. 10.00 or 0.00 is free."/>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="clearfix">
+            <div class="input">
+              <label for="listing-exchange-options" class="clear required">Exchange Options</label><div id="listing-exchange-options-error" class="error"></div>
+              <ul>
+                <li><input type="checkbox" id="listing-exchange-options-pickup" name="exchangeOptions" value="Pickup" class="checkbox"><label class="minor">Pickup</label></li>
+                <li><input type="checkbox" id="listing-exchange-options-deliver" name="exchangeOptions" value="Deliver" class="checkbox"><label class="minor">Deliver</label></li>
+                <li><input type="checkbox" id="listing-exchange-options-ship" name="exchangeOptions" value="Ship" class="checkbox"><label class="minor">Ship</label></li>
+                <li><input type="checkbox" id="listing-exchange-options-other" name="exchangeOptions" value="Other" class="checkbox"><label class="minor">Other</label></li>
+                <li><input type="text" name="exchangeOptionsOtherText" id="listing-exchange-options-other" placeholder="horseback, private jet, bike messanger..." style="display:none;" /></li>
+              </ul>
+            </div>
+          </div>
+        </fieldset>
+      </right><!-- end right column -->
+      <fieldset><div id="listing-categories-error" class="error"></div>
+        <label for="listing-category" class="clear required">Category</label><div id="listing-category-error" class="error"></div>
+        <categories class="clearfix">
+        <!-- <categories id="category-filter-section"> -->
+          <input type="text" name="category" id="listing-category" class="listing-category" placeholder="Type for suggestion">
+        </categories>
+      </fieldset>
+      <fieldset>
+          <div class="clearfix">
+            <label for="listing-location-country" class="clear required">Country or Zipcode</label><div id="listing-location-country-error" class="error"></div>
+            <div class="input">
+              <input type="text" name="country" id="listing-location-country" placeholder="Type for suggestion. Country Name - i.e. United States"/>
+            </div>
+            <label for="listing-location-city-state" class="clear required">City and/or State</label><div id="listing-location-city-state-error" class="error"></div>
+            <div class="input">
+              <input type="text" name="city" id="listing-location-city-state" placeholder="Type for suggestion.  City, State - i.e. New York, NY"/>
+            </div>
+            <div class="input">
+              <label for="listing-location-neighborhood">Neighborhood</label>
+              <input type="text" name="neighborhood" id="listing-location-neighborhood" placeholder="i.e. Upper East Side"/>
+            </div>
+          </div>
+      </fieldset>
+      <div class="actions">
+        <input type="submit" id="listing-submit-button" value="List!" class="btn" />
+      </div>
+    </form>
+  </new-listing>
+</body>
+</html>

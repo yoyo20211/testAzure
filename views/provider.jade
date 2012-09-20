@@ -1,0 +1,14 @@
+!!! 5
+html
+    head
+        title easyXDM.Transport test
+        script(type="text/javascript", src="/js/easyXDM/easyXDM.min.js"></script>
+        script(type="text/javascript")
+            var socket = new easyXDM.Socket({
+                    onMessage: function(message, origin){
+                        console.log("Received '" + message + "' from '" + origin + "'");
+                        socket.postMessage("Indeed it does!");
+                    }
+            });
+    body
+      

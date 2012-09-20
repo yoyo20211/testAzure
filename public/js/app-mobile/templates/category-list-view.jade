@@ -1,0 +1,14 @@
+div(data-role="header", data-position="fixed")
+        a(href="javascript:void(0);", class="ui-btn-left back", data-direction="reverse", data-icon="check") Back
+        h1 MeListing Mobile
+        a(href="javascript:void(0);", class="ui-btn-right map-it", data-icon="check") Map It!
+
+    div(data-role="content")
+        ul(data-role="listview", data-inset="true")
+            if postitems != null && postitems.length > 0
+             li
+                a(href="javascript:void(0);", id="0", class="listview-postitem-detail", data-transition="slide")
+                    h3 Some Sushis
+            else
+             div No item found
+

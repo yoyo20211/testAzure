@@ -1,0 +1,313 @@
+//============================//
+//=== COMMON SHARED STYLES ===//
+//============================//
+
+//========================//
+//=== GLOBAL VARIABLES ===//
+//========================//
+
+//=== COLORS ===//
+@brightBlue: #31E7FF;
+
+@darkGrey: #323232;
+@mediumGrey: #999999;
+@lightGrey: #efefef;
+
+@salmon: #FF5A5A;
+
+//=== POSITIONING ===//
+
+.relLeft {position: relative; float: left;}
+.relRight {position: relative; float: right;}
+
+//=== CSS3 CROSS BROWSER ===//
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.rounded-corners-right (@radius: 5px) {
+  -webkit-border-top-right-radius: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+  -moz-border-radius-topright: @radius;
+  -moz-border-radius-bottomright: @radius;
+  border-top-right-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+
+.rounded-corners-top(@radius: 5px) {
+  -webkit-border-top-left-radius: @radius;
+  -webkit-border-top-right-radius: @radius;
+  -moz-border-radius-topleft: @radius;
+  -moz-border-radius-topright: @radius;
+  border-top-left-radius: @radius;
+  border-top-right-radius: @radius;
+}
+
+.rounded-corners-bottom(@radius: 5px) {
+  -webkit-border-bottom-right-radius: @radius;
+  -webkit-border-bottom-left-radius: @radius;
+  -moz-border-radius-bottomright: @radius;
+  -moz-border-radius-bottomleft: @radius;
+  border-bottom-right-radius: @radius;
+  border-bottom-left-radius: @radius;
+}
+
+.shadow (@hori: 2px, @vert: 2px, @blur: 3px, @spread: 3px, @color: #666) {
+  -moz-box-shadow:    @hori @vert @blur @spread @color;
+  -webkit-box-shadow: @hori @vert @blur @spread @color;
+  box-shadow:         @hori @vert @blur @spread @color
+}
+
+.transparent (@percent: 50, @decimal: 0.5) {
+  zoom: 1;
+  filter: alpha(opacity=@percent);
+  opacity: @decimal;
+}
+
+// .background-gradient(@top: #999,@bottom: #666) {
+//   background-color: @top; // Old browsers
+//   @include filter-gradient(@top, @bottom, vertical); // IE6-9
+//   @include background-image(linear-gradient(top, @top 0%,@bottom 100%));
+// }
+
+// #######################################
+// CSS transition fade-in fade-out
+// #######################################
+// .transition(@property: 'all', @duration: '0.5s', @function: 'ease-in-out') {
+//   @include transition-property(@property);
+//   @include transition-duration(@duration);
+//   @include transition-timing-function(@function);
+// }
+
+.ease-in-out(@property: 'all', @duration: 0.5s, @function: 'ease-in-out') {
+  -moz-transition-property: @property;
+  -webkit-transition-property: @property;
+  -o-transition-property: @property;
+  transition-property: @property;
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  -o-transition-duration: @duration;
+  transition-duration: @duration;
+  -moz-transition-timing-function: @function;
+  -webkit-transition-timing-function: @function;
+  -o-transition-timing-function: @function;
+  transition-timing-function: @function;
+}
+
+// #######################################
+// Text Effects
+// #######################################
+.truncate-text(@value: 'ellipsis') {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+//===========================//
+//=== GENERAL SITE STYLES ===//
+//===========================//
+body {
+    font-family: "Helvetica" Arial sans-serif;
+    padding: 0;
+}
+
+//=== COMMON CLASSES ===//
+
+.required:after {
+  content: " *";
+  color: @salmon;
+}
+
+//==========================//
+//=== TWO COLUMN LAYOUTs ===//
+//==========================//
+left {
+  .column(6);
+  height: auto;
+}// end left
+right {
+  .column(6);
+  height: auto;
+}// end right
+
+//===================//
+//=== AJAX LOADER ===//
+//===================//
+#loader {
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 458px;
+    width: 100%;
+    background:
+    url(images/ajax-loader.gif) white no-repeat center center; z-index: 9999;
+}
+
+//===================//
+//=== FORM STYLES ===//
+//===================//
+
+
+
+//===================//
+//=== FORM ERRORS ===//
+//===================//
+.error-form {
+  .column(10);
+  .push(1);
+  height: auto;
+  padding: 6px 0;
+  font-size: 14px;
+  color: @salmon;
+  text-align: center;
+  background-color: @lightGrey;
+  .rounded-corners;
+}
+
+.error {
+  padding: 3px 0 0 0;
+  font-size: 12px;
+  color: @salmon;
+}
+
+.error-input {
+  border: 3px @salmon solid;
+}
+
+.error-submit, .disabled {
+  background-color: @lightGrey;
+  color: @mediumGrey;
+  border: 3px @salmon solid;
+}
+
+//===================================//
+//=== FLASH: NOTICE, ALERT, ERROR ===//
+//===================================//
+#notice, #alert {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  top: 15px;
+  margin: 0 auto;
+  z-index:98;
+
+  p {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 5px auto;
+    font-size: 16px;
+    color: @darkGrey;
+    text-align: center;
+    z-index:99;
+  }// end p
+
+  .backdrop {
+    width: 100%;
+    height: 100%;
+    .transparent(75, 0.75);
+  }// end .backdrop
+}// end #notice #alert
+
+#notice {
+  .backdrop {
+    background-color: @brightBlue;
+  }
+}// end #notice
+
+#alert {
+  .backdrop {
+    background-color: @salmon;
+  }
+}// end #alert
+
+//=======================//
+//=== COLORBOX STYLES ===//
+//=======================//
+// Added for the colorbox z-index
+.colorbox {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:9999;
+  overflow:hidden;
+  margin: 0 auto;
+}
+
+#colorbox {
+  .colorbox;
+}
+
+#cboxOverlay {
+  .colorbox;
+}
+
+#cboxWrapper {
+  .colorbox;
+}
+
+#cboxLoadedContent {
+  .colorbox;
+  overflow: visible;
+  // height: 100%;
+}
+
+//============//
+//=== MISC ===//
+//============//
+//This is to take care of the checkbox appearing too close to the text.
+input[type="checkbox"] {
+  margin: 8px;
+  padding: initial;
+  background-color: initial;
+  border: initial;
+}
+
+//===========================//
+//=== SOCIAL ICONS STYLES ===//
+//===========================//
+
+// .fbIcon {
+//   background-position: 1px 0;
+// }
+
+// .twIcon, .fbIcon, .tumblrIcon, .tumblrIconNew, .fbIconNew, .twIconNew {
+//   display: inline-block;
+//   height: 27px;
+//   margin: 0 4px 0 0;
+//   text-indent: -9999px;
+//   width: 27px;
+// }
+
+// .fabShopSprite, .spriteIcon {
+//   background: url("/images/icon_sprite.png") no-repeat scroll 0 0 transparent;
+// }
+
+// .twIcon {
+//   background-position: -28px 0;
+// }
+// .twIcon, .fbIcon, .tumblrIcon, .tumblrIconNew, .fbIconNew, .twIconNew {
+//   display: inline-block;
+//   height: 27px;
+//   margin: 0 4px 0 0;
+//   text-indent: -9999px;
+//   width: 27px;
+// }
+
+// span.clear-mark{
+//   display:none;
+//   font-family:verdana;
+//   cursor:pointer;
+//   color:#38468F;
+//   font-weight:bold;
+//   position:relative;
+//   height:20px;
+//   left:-18px;
+// }
+// span.clear-mark:hover{
+//   color:#ccc;
+// }

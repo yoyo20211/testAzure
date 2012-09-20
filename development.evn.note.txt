@@ -1,0 +1,60 @@
+node => v0.6.12 is required
+
+The code uses Iced Coffeescript to compile to Javascript.
+
+To compile Iced Coffeescript to be used in node, use vim-coffee-script's CoffeeMake -I or --runtime node.
+Or iced -c --runtime node/window <compile file>
+
+That command would put this in the head of the file:
+
+iced = require('iced-coffee-script').iced;
+
+else it would complain iced is not found.
+
+To run mongodb on the test server:
+
+mongod run --config /usr/local/Cellar/mongodb/2.0.3-x86_64/mongod.conf &
+
+TO run node on the test server:
+
+node server.js &
+
+For the easyXDM to discover the cor file the server name has to be changed to the full ip at line 95 in main.js.
+
+http://58.185.193.190
+
+For uploading Post-System:
+
+1. The folders for uploading Photo - images, Voice - voice, Video - video have to be setup, the default are in public/data folder.
+
+2. ImageMagick plugin has to be installed on the host cos it needs the plugin to processing photo resolution.
+
+Coding Convention:
+
+1. 	All variables are camelcase - i.e. userId.
+2.	All function names are camelcase - i.e. generateMessage.
+3. 	Always try to avoid abrreviation.
+4. 	All ids in html files are dash separated, i.e. non-loggedin-account-nav.
+5. 	User " " instead of ' ' for the attribute names like jQuery("div#listing-name").
+6. 	All api call in the server code have to be prefixed with api, i.e. app.get '/api/getAllCities/'
+7. 	All server call that return pages should be prefixed with pages, i.e. app.get '/pages/getAllCities/'
+8. 	The calls above should be closed out with proper / at the end.
+9. 	The object properties are camel case - i.e. WishList - postItems but variable can be all lowercase postitems
+10. The variables starting with $ in js files are thos of jQuery objects.
+
+* All of the utility functions are in utils/service.coffee and configuration info is in config/environment.coffee
+
+To run Jasmine-node test:
+
+1. Install jasmine-node - sudo npm install jasmine-node -g.
+2. Issue command in the project context - jasmine-node -coffee specs      
+
+For the M Project code:
+
+cd /path/to/folder
+espresso init -e -p ShopMeMobile
+
+and running it with
+
+cd /ShopMeMobile
+espresso server

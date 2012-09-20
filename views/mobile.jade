@@ -1,0 +1,111 @@
+!!!doctype html
+html
+    head
+        meta(charset="utf-8")
+        title
+            MeListing Mobile
+        link(rel="stylesheet", href="/stylesheets/ui-lightness/jquery-ui-1.8.17.custom.css")    
+        link(rel="stylesheet", href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css")
+        link(rel="stylesheet", href="/stylesheets/jquery.mobile.pagination.css")
+        script(data-main="/js/app-mobile/main", type="text/javascript", src="/js/require/require-1.0.2.min.js")
+        style(type="text/css")
+            .center-content {
+                min-height: 400px;
+                text-align: center;
+            }
+            .dashboard {
+                width: 250px;
+                margin: 0 auto;
+                diplay: block;
+                clear: both;
+            }
+            .dashboard-icon {
+                display: block;
+                padding: 15px;
+                float: left;
+            }
+
+    body(lang="en", style="display:none;")
+        - var categoriesPerPage     = 9
+        - var section               = ""
+        - var length                = categories.length
+        - var pageNumber            = 0
+        - var totalNumberOfPages    = Math.floor(length / categoriesPerPage)
+        if length != 0 && (length % categoriesPerPage) != 0
+            - totalNumberOfPages    += 1
+        each category, index in categories
+            if  (index != 0 && index % categoriesPerPage == 0) || index == (length - 1)
+                - pageNumber    += 1    
+                div(data-role="page", id="page-" + pageNumber)
+                    div(data-role="header", data-position="fixed")
+                        h1 MeListing Mobile
+                        a(href="javascript:void(0);", class="ui-btn-right set-location",  data-rel="dialog", data-icon="check") Set Location
+                    div(data-role="content")
+                        div(class="center-content")
+                            div(class="dashboard")
+                               | !{section}
+                    div(data-role="footer", class="tabbar", data-id="main-tabbar",  data-position="fixed")
+                        div(data-role="navbar", class="tabbar")                 
+                            ul
+                                li
+                                    a(href="javascript:void(0);", class="default ui-state-persist ui-btn-active browse", data-icon="home") Browse
+                                li
+                                    a(href="javascript:void(0);", class="search ui-state-persist", data-icon="star") Search
+                                li
+                                    a(href="javascript:void(0);", class="get-app ui-state-persist", data-icon="star") Get MeListing App
+                    ul(data-role="pagination")
+                        if pageNumber != 1 
+                            - var lastPageId    = pageNumber - 1
+                            li(class="ui-pagination-prev")
+                                a(href="#page-" + lastPageId) Prev
+                        if pageNumber != totalNumberOfPages
+                            -var nextPageId     = pageNumber + 1
+                            li(class="ui-pagination-next")
+                                a(href="#page-" + nextPageId) Next
+                - section       = ""
+                - var icon      = "<a href='javascript:void(0);' id='" + category + "' class='dashboard-icon'><img src='/images/icon_likes.svg' /></a>"
+                - section       += icon 
+                //"<a href='javascript:void(0);' id=" + category + " class='dashboard-icon'><img src='/images/icon_likes.svg'></img><span class='icon-lable'>" + category + "</span></a>"
+            else
+                - var icon      = "<a href='javascript:void(0);' id='" + category + "' class='dashboard-icon'><img src='/images/icon_likes.svg' /></a>"
+                - section       += icon
+                                        
+        div(align="center", data-role="page", id="location-dialog", data-nobackbtn="true", name="location-dialog")
+            form(action="javascript:void(0);", method="post", name="set-location-form", id="set-location-form")
+              div(data-role="fieldcontain", data-theme="a")
+                label(for="location-country-change-text-input", class="clear required") Country or Zipcode
+                input(type="text", name="country", id="location-country-change-text-input", placeholder="Type for suggestion. Country Name - i.e. United States")
+                label(for="location-city-state-change-text-input", class="clear required") City and/or State
+                input(type="text", name="city", id="location-city-state-change-text-input", placeholder="Type for suggestion.  City, State - i.e. New York, NY")
+                a(href="javascript:void(0);", data-role="button", data-icon="check", data-theme="b", id="save-location-button", class="ui-btn-right") Save
+                a(href="javascript:void(0);", data-role="button", data-icon="delete", data-theme="b", id="cancel-location-button", class="ui-btn-left") Cancel
+    
+        //********************************************************
+        //  Search
+        //********************************************************
+
+        div(id="search", data-role="page", data-theme="d")
+
+        //********************************************************
+        //  ListView
+        //********************************************************
+
+        div(id="category-list", data-role="page", data-theme="d")
+        
+        //********************************************************
+        //  Item detail
+        //********************************************************
+
+        div(id="postitem-detail", data-role="page", data-theme="d")    
+
+        //********************************************************
+        //  Map it
+        //********************************************************
+
+        div(id="map-it", data-role="page", data-theme="d")    
+
+        //********************************************************
+        //  Get App.
+        //********************************************************
+
+        div(id="get-app", data-role="page", data-theme="d")

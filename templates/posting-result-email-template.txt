@@ -1,0 +1,14 @@
+Hello, 
+
+  Thank you for posting item on Melisting. 
+  Posting title : {{title}}
+  Result :
+  
+	{{result}}
+
+  
+
+  Please enjoy listing!
+
+
+  MeListing team.

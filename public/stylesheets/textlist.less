@@ -1,0 +1,46 @@
+//=======================================//
+//=== TEXT LIST BROWSER & DIRECTORY   ===//
+//=======================================//
+
+#text-listing-container {
+  .column(12);
+  height: @imageBrowserHeight;
+  min-height: @imageBrowserHeight;
+  margin: 3% 0 0 1%;
+  overflow: visible;
+  width: 98%;
+
+  #grid-listing-container {
+    height: @imageBrowserHeight;
+    min-height: @imageBrowserHeight;
+
+    //=== Kendo UI CSS ===//
+    #grid {
+
+      .k-grid-header, .k-pager-wrap {
+        background: none;
+        
+        .k-header {
+          background-color: #FFFFFF;
+        }
+      }
+
+      .k-grid-content {
+        height: 100%;
+        min-height: 360px;
+      }
+
+      .k-detail-cell {
+        #grid-detail-media-strip {
+          img {
+            width: 13%; 
+            height: 100%; 
+            margin: 1% 6%; 
+            float: left;
+          }
+        }
+      }
+    }
+  }
+
+}// end #text-listing-container

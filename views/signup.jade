@@ -1,0 +1,59 @@
+!!! 5
+html(lang="en", lang="en", id="index-page", 
+  class="no-js webkit root-section js  gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions fontface domloaded w-1900 lt-1920")
+  head
+    title MeListing Sign Up Form
+  
+  body
+    signup
+      nav(class="controls")
+          a(href="javascript:void(0)", id="signup-form-close", class="close", title="close the signup form.")
+            img(src="/images/close.png")
+      header
+        h1#popup-title Create Your Account!
+      div(id="signup-form-error", class="error-form", style="display:none;")
+      form(id="signup-form", class="ajax", method="post", action="javascript:void(0)")
+        left
+          fieldset
+            div(class="clearfix")
+              label(for="signup-email", class="required") Email 
+              div(id="signup-email-error", class="error")
+              div(class="input")
+                input(type="text", name="signup-email", id="signup-email", value="", placeholder="i.e. dalek@example.com")
+          fieldset
+            div(class="clearfix")
+              label(for="signup-username", class="required") Username
+              div(id="signup-username-error", class="error")
+              div(class="input")
+                input(type="text", value="", name="signup-username", id="signup-username", placeholder="i.e. fahrenheit451")
+          fieldset
+            div(class="clearfix")
+              label(for="signup-password", class="required") Password
+              div(id="signup-password-error", class="error")
+              div(class="input")
+                input(type="password", value="", name="signup-password", id="signup-password", placeholder="Don't forget :)")
+          fieldset
+            div(class="clearfix")
+              div(class="input")
+                input(type="checkbox", id="accept-terms-of-use", name="accept-terms-of-use",  value="", class="checkbox error-input")
+                label(id="terms-of-use", for="accept-terms-of-use", class="required") I accept the 
+                  a(href="javascript:void(0)") terms of use.
+                div(id="terms-of-use-error", class="error")
+        right
+          fieldset
+              div(class="clearfix")
+                label(for="signup-location-country", class="clear required") Country or Zipcode
+                div(id="signup-location-country-error", class="error")
+                div(class="input")
+                  input(type="text", name="country", id="signup-location-country", placeholder="Type for suggestion. Country Name - i.e. United States")
+                label(for="signup-location-city-state", class="clear required") City and/or State
+                div(id="signup-location-city-state-error", class="error")
+                div(class="input")
+                  input(type="text", name="city", id="signup-location-city-state", placeholder="Type for suggestion.  City, State - i.e. New York, NY")
+                div(class="input")
+                  label(for="signup-location-neighborhood") Neighborhood
+                  input(type="text", name="neighborhood", id="signup-location-neighborhood", placeholder="i.e. Upper East Side")
+          map
+            img(src="/images/map.svg")
+        div(class="actions")
+          input(type="submit", id="signup-submit-button", value="Sign Up!", class="btn")

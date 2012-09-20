@@ -1,0 +1,111 @@
+!!! 5
+html(lang="en", lang="en", id="index-page", 
+  class="no-js webkit root-section js  gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions fontface domloaded w-1900 lt-1920")
+  head
+    title MeListing Listing Form
+  body
+    new-listing
+      nav(class="controls")
+        a(href="javascript:void(0)", id="listing-form-close",  class="close", title="close the signup form.")
+          img(src="/images/close.png")
+      header
+        h1 List Item
+      div(id="uploadbar", style="display:none;")
+      div(id="listing-form-error", class="error-form", style="display:none;")
+      div(id="listing-form-cancel-upload", style="display:none;") Closing the form will cancel the upload if there is one in progress. Do you want to?
+        input(type="button", id="listing-form-cancel-upload", value="Cancel Upload", class="btn")
+        input(type="button", id="listing-form-continue-upload", value="Continue Upload", class="btn")
+      form(class="ajax", id="listing-form", enctype="multipart/form-data", method="post", action="javascript:void(0);")
+        left
+          fieldset
+            div(class="clearfix")
+              label(for="listing-title", class="required") Title
+              div(id="listing-title-error", class="error")
+              div(class="input")
+                input(type="text", name="title", id="listing-title", placeholder="Descriptive and to the point.")
+          fieldset
+            div(class="clearfix")
+              label(for="listing-description", class="required") Description 
+              div(id="listing-description-error", class="error")
+              div(class="input")
+                textarea(name="itemDescription", id="listing-description", placeholder="")
+          fieldset
+            div(class="clearfix")
+              label(for="listing-email", class="required") Email
+              div(id="listing-email-error", class="error")
+              input(type="text", name="email", id="listing-email", placeholder="i.e. email@domain.com")
+          fieldset
+            div(class="clearfix")
+              div(class="input")
+                label(for="listing-show-email", class="clear") Show Email
+                ul
+                  li
+                    input(type="radio", name="showEmail", value="1", class="checkbox") 
+                    label(class="minor") Yes
+                  li
+                    input(type="radio", name="showEmail", value="0", class="checkbox", checked)
+                    label(class="minor") No
+          fieldset
+            div(class="clearfix")
+              label(for="media") Media
+              div(id="listing-media-error")
+              br
+              label(for="media-input-listing-photo")  4 Images ( 10 mbs max )
+              br
+              input(type="file", id="media-input-listing-photo", name="photoFile[]")
+              br
+              label(for="media-input-listing-video")  1 Video ( 10 mbs max )
+              br
+              input(type="file", id="media-input-listing-video", name="videoFile")
+              br
+              label(for="media-input-listing-voice")  1 Voice Recording ( 10 mbs max )
+              br
+              input(type="file", id="media-input-listing-voice", name="voiceFile")
+        right
+          fieldset
+            div(class="clearfix")
+              label(for="listing-price") Price* $
+              div(id="listing-price-error", class="error")
+              div(class="input")
+                input(type="text", name="price", id="listing-price", placeholder="i.e. 10.00 or 0.00 is free.")
+          fieldset
+            div(class="clearfix")
+              div(class="input")
+                label(for="listing-exchange-options", class="clear required") Exchange Options
+                div(id="listing-exchange-options-error", class="error")
+                ul
+                  li
+                    input(type="checkbox", id="listing-exchange-options-pickup", name="exchange-options", value="Pickup", class="checkbox")
+                    label(class="minor") Pickup
+                  li
+                    input(type="checkbox", id="listing-exchange-options-deliver", name="exchange-options", value="Deliver", class="checkbox")
+                    label(class="minor") Deliver
+                  li
+                    input(type="checkbox", id="listing-exchange-options-ship", name="exchange-options", value="Ship", class="checkbox")
+                    label(class="minor") Ship
+                  li
+                    input(type="checkbox", id="listing-exchange-options-other", name="exchange-options", value="Other", class="checkbox")
+                    label(class="minor") Other
+                  li
+                    input(type="text", id="listing-exchange-options-other-text", name="exchange-options-other-text", placeholder="horseback, private jet, bike messanger...", style="display:none;")
+          fieldset
+            div(id="listing-categories-error", class="error")
+            label(for="listing-category", class="clear required") Category
+            div(id="listing-category-error", class="error")
+            categories(class="clearfix")
+              input(type="text", name="category", id="listing-category", class="listing-category", placeholder="Type for suggestion")
+          fieldset
+            div(class="clearfix")
+              label(for="listing-location-country", class="clear required") Country or Zipcode
+              div(id="listing-location-country-error", class="error")
+              div(class="input")
+                input(type="text", name="country", id="listing-location-country", placeholder="Type for suggestion. Country Name - i.e. United States")
+              label(for="listing-location-city-state", class="clear required") City and/or State
+              div(id="listing-location-city-state-error", class="error")
+              div(class="input")
+                input(type="text", name="city", id="listing-location-city-state", placeholder="Type for suggestion.  City, State - i.e. New York, NY")
+              div(class="input")
+                label(for="listing-location-neighborhood") Neighborhood
+                input(type="text", name="neighborhood", id="listing-location-neighborhood", placeholder="i.e. Upper East Side")
+        div(class="actions")
+          input(type="submit", id="listing-submit-button", value="List!", class="btn")

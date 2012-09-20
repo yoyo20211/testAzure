@@ -1,0 +1,211 @@
+!!! 5
+html(lang="en")
+    head
+        title "listsil"
+        script(type="text/javascript", src="/js/edit-listing.js")
+        script(type="text/javascript", src="/js/jquery.autogrow.js")
+        script(type="text/javascript", src="/js/jquery.ajaxfileupload.js")
+        script(type="text/javascript", src="/js/jquery.jeditable.js")
+        script(type="text/javascript", src="/js/jquery.jeditable.autogrow.js")
+        script(type="text/javascript", src="/js/jquery.jeditable.ajaxupload.js")
+        script(type="text/javascript", src="/js/date-time-format.js")
+        script(type="text/javascript", src="/js/js-iso8601.min.js")
+        script(type="text/javascript", src="/js/ko.bindingHandlers.jeditable.js")
+        script(type="text/javascript", src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js")
+        script(type="text/javascript", src="/js/knockout.validation.min.js")
+        script(type="text/javascript", src="/js/string.format.js")
+        script(type="text/javascript", src="/js/jquery.confirm.js")
+        link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css")
+        link(rel="stylesheet", href="/stylesheets/jquery.confirm.css")
+        | <!--[if lte IE 8]>
+        |     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
+        | <![endif]-->
+    body
+        div(id="listing-edit")
+            div(id="tabs")
+                ul
+                    li
+                        a(href="#item-detail") Item Detail
+                    li
+                        a(href="#photos") Photos
+                    li
+                        a(href="#video") Video
+                    li
+                        a(href="#voice") Voice
+                div(id="item-detail", class="item-detail")
+                    table
+                        thead
+                        tbody
+                            tr
+                                td 
+                                    label(for="item-detail-email") Email:
+                                td
+                                    span(id="item-detail-email", data-bind="jeditable: email, jeditableOptions: {}")
+                                    p(data-bind="validationMessage: email")
+                            tr
+                                td 
+                                    label(for="item-detail-item-description") Description:
+                                td
+                                    span(id="item-detail-item-description", data-bind="jeditable: itemDescription, jeditableOptions: {type : 'autogrow'}")
+                                    p(data-bind="validationMessage: itemDescription")
+                            tr
+                                td 
+                                    label(for="item-detail-price") Price: $
+                                td
+                                    span(id="item-detail-price", data-bind="jeditable: price, jeditableOptions: {}")
+                                    p(data-bind="validationMessage: price")
+                            tr
+                                td 
+                                    label(for="item-detail-category") Category:
+                                td
+                                    span(id="item-detail-category", data-bind="jeditable: category, jeditableOptions: {}")
+                                    p(data-bind="validationMessage: category")
+                            tr
+                                td 
+                                    label(for="item-detail-exhange-options") Delivery Options:
+                                td
+                                    span(id="item-detail-exhange-options", data-bind="jeditable: exchangeOptions, jeditableOptions: {type: 'select', data: \"{'pickup':'Pickup Only', 'pickup, deliver':'Pickup and Deliver', 'pickup, deliver, ship':'Pickup, Deliver and Ship', 'pickup, ship':'Pickup and Ship', 'deliver':'Deliver Only', 'deliver, ship':'Delivery and Ship', 'ship':'Ship Only', 'others':'Others'}\"}")
+                            tr
+                                td 
+                                    label(for="item-detail-show-email") Show Email:
+                                td
+                                    span(id="item-detail-show-email", data-bind="jeditable: showEmail, jeditableOptions: {type: 'select', data: \"{'true':'Yes','false':'No'}\"}")
+                            tr
+                                td 
+                                    label(for="item-detail-country") Country:
+                                td
+                                    span(id="item-detail-country", data-bind="text: address.country")
+                            tr
+                                td 
+                                    label(for="item-detail-state") State:
+                                td
+                                    span(id="item-detail-state", data-bind="text: address.state")
+                            tr
+                                td 
+                                    label(for="item-detail-city") City:
+                                td
+                                    span(id="item-detail-city", data-bind="text: address.city")
+                            tr
+                                td 
+                                    label(for="item-detail-neighborhood") Neighborhood:
+                                td
+                                    span(id="item-detail-neighborhood", data-bind="jeditable: address.neighborhood, jeditableOptions: {}")
+                            tr
+                                td 
+                                    label(for="item-detail-created-date") Posted Date:
+                                td
+                                    span(id="item-detail-created-date", data-bind="text: createdDate.formattedDate")
+                            tr
+                                td(align="center", colspan="1")
+                                    input(id="listing-edit-update-postitem-button", data-bind="click: updatePostItem", type="button", name="update", value=" Update ")
+                                td(align="center", colspan="1")
+                                    input(id="listing-edit-cancel-update-postitem-button", data-bind="click: cancelUpdatePostItem", type="button", name="cacel", value=" Cancel ")
+                    div(id="item-detail-map")
+                div(id="photos")
+                    div(data-bind="visible: numberOfProcessedPhotos() >= 1")
+                        table
+                            thead
+                            tbody
+                                tr
+                                    td 
+                                        label(for="media-input-listing-photo")  4 Images ( 10 mbs max )
+                                        br
+                                        input(type="file", class="media-input-listing-edit-photo", name="photoFile[]", data-bind="visible: numberOfPhotos() < 1")
+                                        br
+                                    td
+                                        input(type="button", class="media-input-listing-edit-photo-update-button", value="Update")
+                                        input(type="button", class="media-input-listing-edit-photo-cancel-button", value="Cancel")
+                        div(data-bind="visible: numberOfPhotos() > numberOfProcessedPhotos()") 
+                            p
+                                div(data-bind="text: numberOfPhotosBeingProcessed") 
+                        listing-media
+                                img(src="/images/sampleImage_001_120x90.jpg", class="large", alt="No Pic Available.", data-bind="attr: {src: mainImageDisplay}")
+                            section
+                                div(class="listing-carousel-wrapper")
+                                    div(class="listing-carousel")
+                                        ul
+                                            li(data-bind="if: numberOfProcessedPhotos() === 1")
+                                                a(href="javascript:void(0);")
+                                                    img(src="", class="small", alt="First Pic", data-bind="attr: {src: '/images/sampleImage_001_120x90.jpg'}")
+                                                div(style="position: absolute; left:0; top:0;")
+                                                    a(href="javascript:void(0);", class="photo-delete", data-bind="attr: {id: photos()[0]._id}, click: deletePhoto")
+                                                        img(src="/images/delete_icon.png")
+                                            li(data-bind="if: numberOfProcessedPhotos() === 2")
+                                                div(class="image-thumb", id="")
+                                                    a(href="javascript:void(0);")
+                                                    a(href="javascript:void(0);")
+                                                        img(src="/images/sampleImage_001_120x90.jpg", class="small", alt="Second Pic")
+                                            li(data-bind="if: numberOfProcessedPhotos() === 3")
+                                                a(href="javascript:void(0);")
+                                                    img(src="/images/sampleImage_001_120x90.jpg", class="small", alt="Third Pic)
+                                            li(data-bind="if: numberOfProcessedPhotos() === 4")
+                                                a(href="javascript:void(0);")
+                                                    img(src="/images/sampleImage_001_120x90.jpg", class="small", alt="Fourth Pic")
+                    div(data-bind="visible: numberOfProcessedPhotos() < 1")
+                        table(data-bind="visible: numberOfPhotos() < 4")
+                            thead
+                            tbody
+                                tr
+                                    td 
+                                        label(for="media-input-listing-photo")  4 Images ( 10 mbs max )
+                                        br
+                                        input(type="file", class="media-input-listing-edit-photo", name="photoFile[]")
+                                        br
+                                    td
+                                        input(type="button", class="media-input-listing-edit-photo-update-button", value="Update")
+                                        input(type="button", class="media-input-listing-edit-photo-cancel-button", value="Cancel")
+                        div(data-bind="visible: numberOfPhotos() > numberOfProcessedPhotos()") 
+                            p
+                                div(data-bind="text: numberOfPhotosBeingProcessed") 
+                        p
+                            h3 No Photo Available
+                div(id="video")
+                    div(data-bind="visible: video")
+                        object(width="425", height="350")
+                            param(name="wmode", value="transparent")
+                            param(name="movie", value="", data-bind="attr: {src: 'http://www.youtube.com/v/HvHOCqbA6rE'}")
+                            param(name="wmode", value="transparent")
+                            embed(src="", type="application/x-shockwave-flash", wmode="transparent", width="425", height="350", data-bind="attr: {src: 'http://www.youtube.com/v/HvHOCqbA6rE'}")
+                        div(style="position: absolute; left:0; top:0;")
+                            a(href="javascript:void(0);", class="video-delete", data-bind="click: deleteVideo")
+                                img(src="/images/delete_icon.png")
+                    div(data-bind="visible: !video")
+                        table
+                            thead
+                            tbody
+                                tr
+                                    td 
+                                        label(for="media-input-listing-video")  1 Video ( 10 mbs max )
+                                        br
+                                        input(type="file", class="media-input-listing-edit-video", name="video")
+                                        br
+                                    td
+                                        input(type="button", class="media-input-listing-edit-video-update-button", value="Update")
+                                        input(type="button", class="media-input-listing-edit-video-cancel-button", value="Cancel")
+                        div(data-bind="visible: false") 
+                            p You have 1 video file being processed. 
+                        p
+                            h3 No Photo Available
+                div(id="voice")
+                    div(data-bind="visible: voice")
+                        audio(src="", preload="auto", data-bind="attr: {src: ''}")
+                        div(style="position: absolute; left:0; top:0;")
+                            a(href="javascript:void(0);", class="video-delete", data-bind="click: deleteVideo")
+                                img(src="/images/delete_icon.png")
+                    div(data-bind="visible: !voice")
+                        table
+                            thead
+                            tbody
+                                tr
+                                    td 
+                                        label(for="media-input-listing-voice")  1 Video ( 10 mbs max )
+                                        br
+                                        input(type="file", class="media-input-listing-edit-voice", name="voice")
+                                        br
+                                    td
+                                        input(type="button", class="media-input-listing-edit-voice-update-button", value="Update")
+                                        input(type="button", class="media-input-listing-edit-voice-cancel-button", value="Cancel")
+                        div(data-bind="visible: false") 
+                            p You have 1 voice recording file being processed. 
+                        p
+                            h3 No Voice Recording Available

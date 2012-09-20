@@ -1,0 +1,14 @@
+Hello, 
+
+  Welcome to MeListing.  {{username}} has been used to sign up for our services.  I hope you will enjoy our work.  Please let us know if there is anything that can help us serve you better.
+  For now, to activate your account, just follow this link:
+
+  {{link}}
+
+  If it is not clickable, just copy and paste it in to your browser.  Once that is done, your account will be activated and you 
+  will be all set.
+
+  Please enjoy listing!
+
+
+  MeListing team.

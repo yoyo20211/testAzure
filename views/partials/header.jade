@@ -1,0 +1,86 @@
+//- notifications and warnings
+div(id="notice", class="flash", style="display:none;")
+    p Flash Notice:
+    div(class="backdrop")
+div(id="alert", class="flash", style="display:none;")
+    p Alerts and Errors.
+    div(class="backdrop")
+//- start top banner
+banner
+    nav(id="account")
+        ul
+            div(id="non-loggedin-account-nav", style="display:none;")
+                li
+                    a(href="javascript:void",
+                        id="signup", class="link",
+                        title="Sign up to start listing") Sign up
+                li
+                    a(href="javascript:void(0)",
+                        id="signin-trigger",
+                        class="link",
+                        title="Sign in to your account") Sign in
+                    //- signin form
+                    //- un-nest from li element to fix rolldown
+                    signin(style="display:none;")
+                        nav(class="controls")
+                            a(href="javascript:void(0)",
+                                id="close-signin-form",
+                                class="close",
+                                title="close the signin form.")
+                                img(src="/images/close.png")
+                            div(id="signin-form-error")
+                        form(class="ajax",
+                                id="signin-form",
+                                method="get",
+                                action="javascript:void(0)")
+                            fieldset
+                                div(class="clearfix")
+                                    label(for="user") Email
+                                    div(id="signin-email-error")
+                                    div(class="input")
+                                        input(type="text",
+                                                name="signin-email",
+                                                id="signin-email",
+                                                placeholder="i.e. email@domain.com")
+                            fieldset
+                                div(class="clearfix")
+                                    label(for="password") Password
+                                    div(id="signin-password-error")
+                                    div(class="input")
+                                        input(type="password",
+                                                name="signin-password",
+                                                id="signin-password",
+                                                placeholder="")
+                            fieldset
+                                div(class="clearfix")
+                                    div(class="input")
+                                        input(type="checkbox",
+                                                id="remember-me",
+                                                name="remember-me",
+                                                value="",
+                                                class="checkbox")
+                                        label(for="remember-me") Remember me
+                            div(class="actions")
+                                a(id="forgot-password", href="javascript:void(0)") Forgot your password?
+                                a(id="register", href="javascript:void(0)") Register
+                                input(type="submit",
+                                        id="signin-submit-button",
+                                        value="Sign In!",
+                                        class="btn")
+
+            div(id="loggedin-account-nav", style="display:none;")
+                li
+                    a(href="javascript:void(0)", id="signout", class="signout") sign out
+                li(id="settings")
+                    a(href="/pages/account-settings/", id="account-settings")
+                        img(src="/images/accountSettings.png", width="15", height="15", alt="Settings")
+                li(id="username") Username
+    //- end banner
+    //- main header with logo, search & list
+    header
+        logo
+            a(href="/")
+                img(src="/images/logo_main.svg", id="logo", alt="meListing", title="meListing")
+        h1 Find a new home for your extra stuff.
+    block main-nav
+    block current-location-indicator

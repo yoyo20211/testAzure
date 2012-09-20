@@ -1,0 +1,252 @@
+@import 'grid.less';
+
+@colum-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+@total-width: 100%;
+
+one-column      { .column(1); }
+two-columns     { .column(2); } 
+three-columns   { .column(3); } 
+four-columns    { .column(4); } 
+five-columns    { .column(5); } 
+six-columns     { .column(6); } 
+seven-columns   { .column(7); }
+eight-columns   { .column(8); }
+nine-columns    { .column(9); } 
+ten-columns     { .column(10); } 
+eleven-columns  { .column(11); } 
+twelve-columns  { .column(12); }
+
+header  {   .column(12); }
+top     {   .column(12); }
+bottom  {   .column(12); }
+logo    {   
+            .column(4); 
+        }
+space   {   .column(9); }
+sign-up {   
+            .column(1); 
+            
+        a   {
+              &:hover { 
+                border: 1px solid red;  
+                color:  gray;
+                padding: 5px;        
+              }
+        }
+}
+sign-in {   
+            .column(1); 
+        
+        a   {
+              &:hover { 
+                border: 1px solid red;  
+                color:  gray;
+                padding: 5px;         
+              }
+
+              &:visited {
+                  border: 1px solid purple;
+              }
+
+        }
+}
+
+.margin-top { margin: 25px; }
+
+find    {   
+            .column(1);
+            .margin-top; 
+        }
+
+list    {   
+            .column(1);
+            .margin-top; 
+        }
+
+search-box {
+            .column(2);
+            .margin-top;
+        }
+
+content {   .column(12); }
+footer  {   .column(12); }
+menu    {   .column(6);  }
+category{   .column(6);  }
+category{   .push(3);    }
+location{   .column(6);  }
+location{   .push(3);    }
+ 
+#copyright { .column(2); 
+             float:left;  
+}
+
+#copyright li { display: inline; text-decoration:none; }
+
+#about     { .column(2); 
+             float:right;
+}
+
+#about li { display: inline; text-decoration:none; padding: .2em 1em; }
+
+@media (max-device-width: 1024px) {
+    space   {   .column(9); }
+    sign-up {   .column(1); 
+                .row(2);
+    }
+    sign-in {   .column(1); 
+                .row(2);
+    }
+}
+
+#container {
+    .column(10);
+    max-height: 600px;
+    height: 600px;
+    overflow: hidden;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#container {
+    .push(2);
+}
+
+#slider{
+    .column(8);
+    margin: 0 0 0 0;
+    padding: 0 0 0 10px;
+    max-height: 100%;
+    height: 100%;
+    background: #CCCCCC;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+daysfilter {
+        
+}
+
+daysfilter {
+    .push(1);    
+}   
+            
+#slider li {
+    margin:0;
+    width:15%;
+    float:left;
+    margin-right:50px;
+    max-height: 100%;
+
+    position: relative; height: 408px; 
+    & img { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+          }
+}
+
+#scrolling-hotspot-left
+{
+    .column(1);
+    max-height: 100%;
+    margin-right: -10px;
+    height: 100%;
+    background-color: red;
+    cursor: url(images/cursors/cursor_arrow_left.cur), url(images/cursors/cursor_arrow_left.cur),w-resize;
+}
+
+.scrolling-hotspot-left-visible
+{
+    background-image: url(images/arrow_left.gif);                
+    background-color: red;
+    background-repeat: no-repeat;
+    opacity: 0.35; 
+    -moz-opacity: 0.35;
+    zoom: 1;
+}
+
+#scrolling-hotspot-right
+{
+    .column(1);
+    max-height: 100%;
+    height: 100%;
+    margin-left: -10px;
+    background-color: red;
+    cursor: url(images/cursors/cursor_arrow_right.cur), url(images/cursors/cursor_arrow_right.cur),e-resize;
+}
+
+
+.scrolling-hotspot-right-visible
+{
+    background-image: url(images/arrow_right.gif);
+    background-color: red;
+    background-repeat: no-repeat;
+    -moz-opacity: 0.35;
+    zoom: 1;
+}
+
+#loader { 
+    position: absolute; 
+    top: 0; 
+    left:0; 
+    height: 458px; 
+    width: 100%; 
+    background: 
+    url(images/ajax-loader.gif) white no-repeat center center; z-index: 9999; 
+}
+
+
+.simply-scroll-container { 
+    position: relative;
+}
+
+.simply-scroll-clip { 
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+
+.simply-scroll-list { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+    
+.simply-scroll-list li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+    
+.simply-scroll-list li img {
+    border: none;
+    display: block;
+}
+
+
+.simply-scroll { 
+    width: 806px;
+    height: 600px;
+    margin-bottom: 1em;
+}
+
+.simply-scroll .simply-scroll-clip {
+    width: 806px;
+    height: 600px;
+}
+    
+.simply-scroll .simply-scroll-list li {
+    float: left; /* Horizontal scroll only */
+    width: 290px;
+    height: 200px;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="25px" height="25px" viewBox="-0.916 -3.804 25 25" enable-background="new -0.916 -3.804 25 25"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g id="XMLID_18_">
+	<g>
+		<path fill="#FFFFFF" d="M16.607,1.216c3.301,0.209,5.805,3.044,5.596,6.341c-0.209,3.305-3.053,5.801-6.345,5.592
+			c-3.301-0.209-5.797-3.052-5.596-6.341C10.479,3.511,13.322,1.011,16.607,1.216z"/>
+		<path d="M10.637,11.406l-0.004,0.004l-9.764,6.025l-0.726-1.191l9.768-6.018h0.004C10.112,10.645,10.353,11.039,10.637,11.406z"/>
+		<path d="M22.203,7.557c0.209-3.297-2.295-6.132-5.596-6.341c-3.285-0.205-6.128,2.295-6.345,5.592
+			c-0.201,3.289,2.295,6.132,5.596,6.341C19.15,13.358,21.994,10.862,22.203,7.557z M16.678,0.183
+			c3.861,0.245,6.803,3.577,6.555,7.445c-0.245,3.869-3.577,6.798-7.438,6.554c-2.13-0.134-3.971-1.199-5.158-2.776
+			c-0.284-0.367-0.524-0.761-0.722-1.179c-0.509-1.049-0.761-2.24-0.682-3.486C9.481,2.872,12.806-0.062,16.678,0.183z"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#FFFFFF" stroke-width="0.3373" stroke-miterlimit="10" d="M10.637,11.406
+			c1.188,1.578,3.028,2.642,5.158,2.776c3.86,0.244,7.192-2.686,7.438-6.554c0.248-3.869-2.693-7.201-6.555-7.445
+			c-3.872-0.244-7.196,2.689-7.444,6.558c-0.079,1.246,0.173,2.437,0.682,3.486C10.112,10.645,10.353,11.039,10.637,11.406z"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="0.3373" stroke-miterlimit="10" x1="9.911" y1="10.227" x2="0.144" y2="16.244"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="0.3373" stroke-miterlimit="10" x1="10.633" y1="11.41" x2="0.869" y2="17.435"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="0.3373" stroke-miterlimit="10" x1="0.144" y1="16.244" x2="0.869" y2="17.435"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,544 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/js/main.coffee",
+			"settings":
+			{
+				"buffer_size": 95143,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/index.jade",
+			"settings":
+			{
+				"buffer_size": 10316,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/partials/header.jade",
+			"settings":
+			{
+				"buffer_size": 4678,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/main-layout.jade",
+			"settings":
+			{
+				"buffer_size": 3602,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/static-layout.jade",
+			"settings":
+			{
+				"buffer_size": 530,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/stylesheets/main.less",
+			"settings":
+			{
+				"buffer_size": 5232,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/stylesheets/static.less",
+			"settings":
+			{
+				"buffer_size": 698,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/stylesheets/listing.less",
+			"settings":
+			{
+				"buffer_size": 5063,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/stylesheets/common.less",
+			"settings":
+			{
+				"buffer_size": 4409,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/stylesheets/main_banner.less",
+			"settings":
+			{
+				"buffer_size": 3000,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 54.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/rlblood/Sites/ShopMeJS/views/rambling.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/directory.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/privacy.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/partials/footer.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/terms.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/contact.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/about.jade",
+		"/home/rlblood/.config/sublime-text-2/Packages/User/Jade.sublime-settings",
+		"/home/rlblood/Sites/ShopMeJS/shopmejs.sublime-project",
+		"/home/rlblood/Sites/ShopMeJS/views/listing.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/main-layout.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/static-layout.jade",
+		"/home/rlblood/.config/sublime-text-2/Packages/User/Nodejs.sublime-settings",
+		"/home/rlblood/Sites/ShopMeJS/views/partials/header.jade",
+		"/home/rlblood/Sites/ShopMeJS/views/newlisting.jade",
+		"/home/rlblood/Sites/ShopMeJS/Gemfile",
+		"/home/rlblood/Sites/ShopMeJS/public/stylesheets/auth.less",
+		"/home/rlblood/Sites/ShopMeJS/public/js/main.js",
+		"/home/rlblood/Sites/ShopMeJS/public/js/main.coffee",
+		"/home/rlblood/Sites/ShopMeJS/Guardfile",
+		"/home/rlblood/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/rlblood/Dropbox/ProgrammingResources/Sublime Text 2/Packages/User/Global.sublime-settings",
+		"/home/rlblood/Dropbox/ProgrammingResources/Sublime Text 2/Packages/User/Base File.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"email",
+			"//",
+			"jquerytools",
+			"standalone"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/js/main.coffee",
+					"settings":
+					{
+						"buffer_size": 95143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6323,
+								6328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/Syntaxes/CoffeeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1952.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/index.jade",
+					"settings":
+					{
+						"buffer_size": 10316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/partials/header.jade",
+					"settings":
+					{
+						"buffer_size": 4678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4178,
+								4178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/main-layout.jade",
+					"settings":
+					{
+						"buffer_size": 3602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								209,
+								2586
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 484.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/static-layout.jade",
+					"settings":
+					{
+						"buffer_size": 530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "public/stylesheets/main.less",
+					"settings":
+					{
+						"buffer_size": 5232,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4054,
+								4054
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2880.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/stylesheets/static.less",
+					"settings":
+					{
+						"buffer_size": 698,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								697,
+								697
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/stylesheets/listing.less",
+					"settings":
+					{
+						"buffer_size": 5063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2102,
+								2102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/stylesheets/common.less",
+					"settings":
+					{
+						"buffer_size": 4409,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1113,
+								1113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "public/stylesheets/main_banner.less",
+					"settings":
+					{
+						"buffer_size": 3000,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.630476190476,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 307.0,
+	"status_bar_visible": true
+}

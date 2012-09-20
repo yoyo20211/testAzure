@@ -1,0 +1,252 @@
+menu {
+  width: 100%;
+  margin: auto;
+  clear: both;
+
+  section {
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+  ul {
+    .row(5);
+    height: auto;
+
+    li {
+      .column(1,5);
+      // margin: 0 3px;
+
+      a {
+        display: block;
+        width: 35px;
+        height: 35px;
+        padding: 1px;
+        border: 2px solid #FFF;
+
+        &:hover {
+          border: 2px solid @brightBlue;
+          .rounded-corners(24px);
+        }
+
+        &:active {
+          border: 2px solid @brightBlue;
+          background-color: @brightBlue;
+        }
+      }
+    }// end li
+  }// end ul
+}// end menu
+
+filters {
+  .column(10);
+  .push(1);
+  min-width: 480px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  //=====================//
+  //=== FILTER STYLES ===//
+  //=====================//
+
+  //=========================//
+  //=== CATEGORIES STYLES ===//
+  //=========================//
+  categories {
+    .column(12);
+    height: auto;
+
+    ul {
+      .row(5);
+      // .pull(2);
+      width: auto;
+      // min-width: 680px;
+      height: auto;
+      margin-bottom: 20px;
+
+      li {
+        .column(1,5);
+        // min-height: 18px;
+        // max-height: 24px;
+        margin-bottom: 5px;
+        font-size: 12px;
+
+        .checkbox {
+          margin: 5px 5px 0 0;
+        }
+
+        p.category {
+          display: inline;
+          // min-width: 100px;
+        }
+      }
+    }
+  }// end categories
+
+  //=======================//
+  //=== LOCATION STYLES ===//
+  //=======================//
+  location {
+    .column(12);
+    height: auto;
+
+    h2 {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    p, label {
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    ul {
+      position: relative;
+      float: left;
+    }
+
+    mylocation {
+      .column(2);
+
+      ul {
+
+        li {
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }// end mylocation
+
+    distance {
+      .column(2);
+
+      ul {
+
+        li {
+          padding-bottom: 1px;
+
+          input {
+          }
+
+          span {
+            font-size: 12px;
+            vertical-align: baseline;
+            margin-left: 5px;
+          }
+        }
+      }
+    }// end distance
+
+    quicklocation {
+      .column(4);
+
+      input {
+        width: 100%;
+        height: 25px;
+        padding: 0 2%;
+        margin: 5px 0;
+        font-size: 11px;
+        border: 1px solid @mediumGrey;
+        .rounded-corners;
+      }
+    }// end quicklocation
+
+    map {
+      .column(4);
+
+      #map {
+        width: 100%;
+        height: 180px;
+      }
+    }
+  }// end location
+
+  //========================//
+  //=== WISHLIST  STYLES ===//
+  //========================//
+  wishlist {
+    width: 100%;
+
+    /* Elastislide Style */
+    .es-carousel-wrapper {
+      background: #CCCCCC;
+      padding:10px 37px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      position:relative;
+      width: 50%;
+      margin: auto;
+    }
+    .es-carousel {
+      overflow:hidden;
+      background:none;
+    }
+    .es-carousel ul {
+      display:none;
+    }
+    .es-carousel ul li {
+      height:100%;
+      float:left;
+      display:block;
+    }
+    .es-carousel ul li a{
+      display:block;
+      border-style:solid;
+      border-color:#222;
+    }
+    .es-carousel ul li a img {
+      display:block;
+      border:none;
+      max-height:100%;
+      max-width:100%;
+    }
+    .es-nav span {
+      position:absolute;
+      top:50%;
+      left:12px;
+      background:transparent url(../images/nav.png) no-repeat top left;
+      width:14px;
+      height:26px;
+      margin-top:-13px;
+      text-indent:-9000px;
+      cursor:pointer;
+      opacity:0.8;
+    }
+    .es-nav span.es-nav-next {
+      right:12px;
+      left:auto;
+      background-position:top right;
+    }
+    .es-nav span:hover {
+      opacity:1.0;
+    }
+
+    .es-carousel ul {
+      display:block;
+    }
+
+  }// end wishlist
+
+  //===================//
+  //=== HELP STYLES ===//
+  //===================//
+  help {
+    .column(12);
+    height: auto;
+  }// end help
+
+  //=====================//
+  //=== MOBILE STYLES ===//
+  //=====================//
+  mobile {
+    .column(12);
+    height: auto;
+  }// end mobile
+
+
+
+}// end filter

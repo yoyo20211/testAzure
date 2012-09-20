@@ -1,0 +1,124 @@
+//=== listing styles start here ===//
+// TODO clean up and make tabs     //
+// common among listing.less and   //
+// here.
+//=== global style resets ===//
+@import 'reset.less';
+//=== use semantic grid stystem ===//
+@import 'grid.less';
+@import 'grid-config.less';
+//=== base variables and shared styles ===//
+@import 'common.less';
+
+#listing-edit {
+
+  #tabs {
+    background: transparent;
+    border: none;
+
+    .ui-widget-header {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #c0c0c0;
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+    }
+    .ui-tabs-nav {
+      border: none;
+    }
+    .ui-state-default {
+      background: transparent;
+      border: none;
+    }
+    .ui-state-active {
+      background: transparent url(/images/uitabs-arrow.png) no-repeat bottom center;
+      border: none;
+    }
+    .ui-state-default a {
+      color: #c0c0c0;
+    }
+    .ui-state-active a {
+      color: #459E00;
+    }
+      /* Elastislide Style */
+    .listing-carousel-wrapper {
+      background: #FFFF;
+      padding:10px 37px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      position:relative;
+      width: 100%;
+      margin: auto;
+    }
+    .listing-carousel {
+      overflow:hidden;
+      background:none;
+    }
+    .listing-carousel ul {
+      display:none;
+    }
+    .listing-carousel ul li {
+      height:100%;
+      float:left;
+      display:block;
+      margin: 1.2%;
+    }
+    .listing-carousel ul li a{
+      display:block;
+      border-style:solid;
+      border-color:#222;
+    }
+    .listing-carousel ul li a img {
+      display:block;
+      border:none;
+      max-height:100%;
+      max-width:100%;
+    }
+    .listing-nav span {
+      position:absolute;
+      top:50%;
+      left:12px;
+      background:transparent url(../images/nav.png) no-repeat top left;
+      width:14px;
+      height:26px;
+      margin-top:-13px;
+      text-indent:-9000px;
+      cursor:pointer;
+      opacity:0.8;
+    }
+    .listing-nav span.listing-nav-next {
+      right:12px;
+      left:auto;
+      background-position:top right;
+    }
+    .listing-nav span:hover {
+      opacity:1.0;
+    }
+
+    .listing-carousel ul {
+      display:block;
+    }
+
+    .audiojs .play {
+        background: url("/images/player-graphics.gif") no-repeat scroll -2px -1px transparent;
+    }
+
+    .audiojs .pause {
+        background: url("/images/player-graphics.gif") no-repeat scroll -2px -91px transparent;
+    }
+
+  }
+
+  .wordwrap { 
+     white-space: pre-wrap;      /* CSS3 */   
+     white-space: -moz-pre-wrap; /* Firefox */    
+     white-space: -pre-wrap;     /* Opera <7 */   
+     white-space: -o-pre-wrap;   /* Opera 7 */    
+     word-wrap: break-word;      /* IE */
+  }
+
+  #item-detail-map { height: 180px; }
+
+}// end listing-edit

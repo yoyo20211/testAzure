@@ -1,0 +1,110 @@
+extends static-layout
+
+block content
+  div(id="breadcrumb")
+    - var link = "http://localhost:7575/pages/directory/username/all/desc/1"
+    a(href=link) directory
+    &nbsp;>
+    - link = "/pages/postinglist/"+username+"/"+ sortby +"/"+sort+"/"+page
+    a(href=link) #{username}
+  br
+  div(id="username", align='center')
+    h1(style="font-size: 22px; font-weight: bold; color: blue;") Username: #{username} 
+  br
+  div(id="directory", align='center')
+    table(style='width: 70%; border: 2px inset gray;')
+      tr
+        td(style='border: 2px inset gray; font-weight: bold;', align='center') 
+          if sortby == "title"
+            if sort == "desc"
+              - var link = "/pages/postinglist/"+username+"/title/asc/"+page
+              a(href=link, style='margin-right:10px; font-weight: bold;') Title &#9660;
+            if sort == "asc"
+              - var link = "/pages/postinglist/"+username+"/title/desc/"+page
+              a(href=link, style='margin-right:10px; font-weight: bold;') Title &#9650;
+            
+          else
+            - var link = "/pages/postinglist/"+username+"/title/asc/"+page
+            a(href=link, style='margin-right:10px;') Title
+        td(style='border: 2px inset gray; font-weight: bold;', align='center') 
+          if sortby == "location"
+            if sort == "desc"
+              - var link = "/pages/postinglist/"+username+"/location/asc/"+page
+              a(href=link, style='margin-right:10px; font-weight: bold;') Location &#9660;
+            if sort == "asc"
+              - var link = "/pages/postinglist/"+username+"/location/desc/"+page
+              a(href=link, style='margin-right:10px; font-weight: bold;') Location &#9650;
+            
+          else
+            - var link = "/pages/postinglist/"+username+"/location/asc/"+page
+            a(href=link, style='margin-right:10px;') Location
+        td(style='border: 2px inset gray; font-weight: bold;', align='center') 
+          if sortby == "date"
+            if sort == "desc"
+              - var link = "/pages/postinglist/"+username+"/date/asc/"+page
+              a(href=link, style='margin-right:10px; font-weight: bold;') Date &#9660;
+            if sort == "asc"
+              - var link = "/pages/postinglist/"+username+"/date/desc/"+page
+              a(href=link, style='margin-right:10px; font-weight: bold;') Date &#9650;
+            
+          else
+            - var link = "/pages/postinglist/"+username+"/date/asc/"+page
+            a(href=link, style='margin-right:10px;') Date
+
+      for row in rows
+        tr
+          td(style='border: 2px inset gray;', align='center')
+            - var link = "/postitem/"+ row.item_id
+            a(href=link, style='margin-right:10px;') #{row.title}
+          td(style='border: 2px inset gray;', align='center') #{row.location}
+          td(style='border: 2px inset gray;', align='center') #{row.date}
+
+      tr
+        td
+        td
+        td
+          div(style="float:right;clear:right; margin:5px;")
+            - var paginationShowNumber  = 5
+            - var showFrom              = 0
+            - var showTo                = 0
+            - var hasPreviousPages      = true
+            - var hasNextPages          = true
+            
+            if numberOfPages <= paginationShowNumber
+              - showFrom                = 1
+              - showTo                  = numberOfPages
+              - hasPreviousPages        = false
+              - hasNextPages            = false
+            else
+              if parseInt(page) <= Math.ceil(paginationShowNumber/2)
+                  - showFrom      = 1
+                  - showTo        = paginationShowNumber
+                  - hasPreviousPages  = false
+              else if (parseInt(page) > (numberOfPages-Math.ceil(paginationShowNumber/2)))
+                  - showFrom = numberOfPages-paginationShowNumber+1
+                  - showTo = numberOfPages
+                  - hasNextPages  = false
+              else
+                  - showFrom = page-Math.floor(paginationShowNumber/2)
+                  - showTo = parseInt(page)+Math.ceil(paginationShowNumber/2)-1
+            if page > 1
+                - var link = "/pages/postinglist/"+username+"/"+ sortby +"/"+sort+"/"+(page-1)
+                a(href=link, style='margin-right:5px;') Prev
+                if hasPreviousPages
+                  ...
+              - for(var i=showFrom; i<=showTo; i++)
+                if i == page
+                  - var link = "/pages/postinglist/"+username+"/"+ sortby +"/"+sort+"/"+i
+                  [
+                  a(href=link, style='margin-right:5px;') #{i}
+                  ]
+                else
+                  - var link = "/pages/postinglist/"+username+"/"+ sortby +"/"+sort+"/"+i
+                  a(href=link, style='margin-right:5px;') #{i}
+              if page < numberOfPages
+                - var nextpage = parseInt(page)+1
+                - var link = "/pages/postinglist/"+username+"/"+ sortby +"/"+sort+"/"+nextpage
+                if hasNextPages
+                  ...
+                a(href=link, style='margin-right:5px;') Next
+           

@@ -1,0 +1,107 @@
+extends main-layout
+
+block css-extend
+    link(rel="stylesheet", href="/stylesheets/ui-lightness/jquery-ui-1.8.17.custom.css")
+    link(rel="stylesheet", type="text/less",  href="/stylesheets/account-settings.less", media="screen")
+    link(rel="stylesheet", type="text/less", href="/stylesheets/edit-listing.less", media="screen")
+    link(rel="stylesheet", href="/stylesheets/kendo.common.min.css")
+    link(rel="stylesheet", href="/stylesheets/kendo.default.min.css")
+    link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css")
+block scripts-extend
+  script(type="text/javascript")
+      head.js("https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js", "/js/knockout-2.1.0.js", "/js/backbone-min.js")
+      head.js("/js/kendo.web.min.js", "/js/account-settings.js", "/js/knockout.mapping-latest.js")
+      head.js("/js/knockout-kendo.min.js", "/js/knockout.validation.min.js", "/js/date-time-format.js")
+      head.js("/js/js-iso8601.min.js", "/js/jquery.jeditable.js", "/js/ko.bindingHandlers.jeditable.js")
+      head.js("/js/jquery.jeditable.autogrow.js", "http://cdn.leafletjs.com/leaflet-0.4/leaflet.js")
+ //- start header content
+block header
+    include partials/header
+      block main-nav
+        &nbsp;
+
+block content
+  div(id="wrapper")
+    account-settings-menu
+      div(id="account-settings-menu-profile", class="account-settings-menu") 
+        a(href="javascript:void(0);") Profile
+      div(id="account-settings-menu-postitems", class="account-settings-menu") 
+        a(href="javascript:void(0);") Posted Items
+      div(id="account-settings-menu-wishlist", class="account-settings-menu") 
+        a(href="javascript:void(0);") Wish List
+      div(id="account-settings-menu-back-home", class="account-settings-menu") 
+        a(href="/") Back to Home
+    main-content
+      div(id="account-settings-main-content-profile", class="account-settings-main-content", data-bind="visible: currentView() === 'profile'") 
+        div(id="account-settings-main-content-profile-detail")
+          div(id="account-settings-main-content-profile-detail-tabs")
+            ul
+                li
+                    a(href="#personal-info") Personal Info
+                li
+                    a(href="#communication-payment-settings") Communication and Payment Settings
+            div(id="personal-info")
+                table
+                  thead
+                  tbody
+                      tr
+                          td 
+                              label(for="personal-info-username") Username:
+                          td
+                              span(id="personal-info-username", data-bind="jeditable: username, jeditableOptions: {}")
+                              p(data-bind="validationMessage: username")
+                      tr
+                          td 
+                              label(for="personal-info-password") Password:
+                          td
+                              span(id="personal-info-password", data-bind="jeditable: hashedPassword, jeditableOptions: {type: 'password'}")
+                              p(data-bind="validationMessage: hashedPassword")
+                      tr
+                          td 
+                              label(for="personal-info-email") Email:
+                          td
+                              span(id="personal-info-email", data-bind="jeditable: email, jeditableOptions: {}")
+                              p(data-bind="validationMessage: email")
+                      tr
+                          td 
+                              label(for="personal-info-country") Country:
+                          td
+                              span(id="personal-info-country", data-bind="text: address.country")
+                      tr
+                          td 
+                              label(for="personal-info-state") State:
+                          td
+                              span(id="personal-info-state", data-bind="text: address.state")
+                      tr
+                          td 
+                              label(for="personal-info-city") City:
+                          td
+                              span(id="personal-info-city", data-bind="text: address.city")
+                      tr
+                          td 
+                              label(for="personal-info-neighborhood") Neighborhood:
+                          td
+                              span(id="personal-info-neighborhood", data-bind="jeditable: address.neighborhood, jeditableOptions: {}")
+                      tr
+                          td(align="center", colspan="1")
+                              input(id="listing-edit-update-profile-button", data-bind="click: updateProfile", type="button", name="update", value=" Update ")
+                          td(align="center", colspan="1")
+                              input(id="listing-edit-cancel-update-profile-button", data-bind="click: cancelUpdateProfile", type="button", name="cacel", value=" Cancel ")
+                div(id="profile-info-map")
+            div(id="communication-payment-settings")
+                p communication-payment-settings
+      div(id="account-settings-main-content-postitems", class="account-settings-main-content", data-bind="visible: currentView() === 'postitems'") 
+        div(id="account-settings-main-content-postitems-detail", data-bind="visible: numberOfPostItems() >= 1") 
+          div(id="grid")
+          div(id="account-settings-main-content-postitems-detail-window")
+        div(id="account-settings-main-content-postitems-detail-no-items", data-bind="visible: numberOfPostItems < 1") 
+          div no postitems
+      div(id="account-settings-main-content-wishlist", class="account-settings-main-content", data-bind="visible: currentView() === 'wishlist'") 
+        div(id="account-settings-main-content-wishlist-detail", data-bind="visible: numberOfWishList() >= 1") 
+          div wishlist
+        div(id="account-settings-main-content-wishlist-detail-no-items", data-bind="visible: numberOfWishList < 1") 
+          div no wishlist
+block extra
+  input(type="hidden", id="loggedin", value="#{loggedin}")
+  input(type="hidden", id="token", value="#{token}")
+div#myEventWatcherDiv

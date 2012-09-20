@@ -1,0 +1,59 @@
+<html lang="en" id="index-page" class="no-js webkit root-section js  gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions fontface domloaded w-1900 lt-1920">
+<head>
+  <title>'MeListing | Sign in'</title>
+  <!-- <link rel="stylesheet" type="text/less" href="stylesheets/main.less" media="screen"> -->
+  <link rel="stylesheet" type="text/less" href="stylesheets/main.less" media="screen">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/modernizr-2.5.2.js"></script>
+  <script type="text/javascript" src="js/less-1.2.1.min.js"></script>
+</head>
+<body>
+
+<!-- this should be extacted as partial -->
+<!-- csignup styles are already imported into the main.less -->
+<div id="popup-container">
+  <signin>
+    <nav class="controls">
+      <a href="#" class="close" title="close the signin form."><img src="images/close.png"></a><!-- close popup form -->
+    </nav>
+    <header>
+      <h1>Sign In!</h1>
+    </header>
+
+    <form class="ajax" method="get" action="newSession.html">
+      <!-- left column fields -->
+      <fieldset>
+        <div class="clearfix">
+          <label for="user">Email or Username</label>
+          <div class="input">
+            <input type="text" name="email" id="email" placeholder=""/>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div class="clearfix">
+          <label for="password">Password</label>
+          <div class="input">
+            <input type="password" name="password" id="password" placeholder=""/>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+          <div class="clearfix">
+            <div class="input">
+              <input type="checkbox" name="remember" value="" class="checkbox">
+              <label for="name">Remember me</label>
+            </div>
+          </div>
+        </fieldset>
+      <div class="actions">
+        <a href="">Forgot your password?</a>
+        <a href="">Register</a>
+        <input type="submit" value="Sign In!" class="btn" />
+      </div>
+    </form>
+  </signin>
+</div>
+
+</body>
+</html>
