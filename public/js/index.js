@@ -48,10 +48,10 @@
   jQuery.noConflict();
 
   rpc = new easyXDM.Rpc({
-    remote: "http://listingserver.cloudapp.net:7575/js/easyXDM/cors/index.html",
-    remoteHelper: "http://listingserver.cloudapp.net:7575/js/easyXDM/name.html",
-    swf: "http://listingserver.cloudapp.net:7575/js/easyXDM/easyxdm.swf",
-    local: "http://listingserver.cloudapp.net:7575/js/easyXDM/name.html"
+    remote: "http://listingserver.cloudapp.net/js/easyXDM/cors/index.html",
+    remoteHelper: "http://listingserver.cloudapp.net/js/easyXDM/name.html",
+    swf: "http://listingserver.cloudapp.net/js/easyXDM/easyxdm.swf",
+    local: "http://listingserver.cloudapp.net/js/easyXDM/name.html"
   }, {
     remote: {
       request: {}

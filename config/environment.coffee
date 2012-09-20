@@ -17,8 +17,8 @@ sslKey                  = fs.readFileSync('key/key.pem').toString()
 sslCertificate          = fs.readFileSync('key/certificate.pem').toString()
 
 exports.common          =
-  mainURL               : 'http://listingserver.cloudapp.net:7575/'
-  registrationURL       : 'http://listingserver.cloudapp.net:7575/'
+  mainURL               : 'http://listingserver.cloudapp.net/'
+  registrationURL       : 'http://listingserver.cloudapp.net/'
   socketIOURL           : 'http://localhost:8080'
   socketIOMainChannel   : 'mainchannel'
   mainEmailAccount      : 'service@melisting.com'
@@ -26,7 +26,7 @@ exports.common          =
   registerDBURL         : 'mongodb://localhost/db'
   redisServer           : 'localhost'
   redisPort             : 6379
-  mainPort              : 7575
+  mainPort              : 80
   socketIOPort          : 8080
   cookieMaxAge          : oneYear
   publicDir             : 'public'
